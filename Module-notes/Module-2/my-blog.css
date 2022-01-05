@@ -1,0 +1,36 @@
+body {
+  margin: 20px;
+}
+small {
+  color: darkblue;
+}
+.blog1 {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #2069f0;
+  color: #000066;
+  border-radius: 10px;
+  font-weight: 600;
+}
+span {
+  background-color: #000066;
+  color: #2069f0;
+}
+.blog2 {
+  border: 3px solid #000066;
+}
+.blog2 p {
+  font-size: 30px;
+}
+.blog3 {
+  border: 2px dashed #000066;
+}
+.blog {
+  padding: 20px;
+}
+.blog h2 {
+  text-align: center;
+}
+ol li {
+  display: inline-block;
+  margin: 8px;
+}
