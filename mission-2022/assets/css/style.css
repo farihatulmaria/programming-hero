@@ -53,10 +53,7 @@ a {
   width: 60%;
 }
 /* hero css */
-.hero {
-}
-.hero-txt {
-}
+
 .hero-txt h1 {
   color: #333;
   font-size: 50px;
@@ -86,8 +83,7 @@ a {
   width: 50%;
 }
 /* misson css */
-.misson {
-}
+
 .misson h1 {
   text-align: center;
   font-size: 50px;
@@ -107,12 +103,9 @@ a {
   width: 79%;
 }
 /* about css */
-.about {
-}
+
 .about img {
   width: 80%;
-}
-.about-txt {
 }
 .about-img {
   position: relative;
@@ -142,8 +135,7 @@ a {
   background-size: contain;
 }
 /* community css */
-.community {
-}
+
 .community-img {
   position: relative;
 }
@@ -172,8 +164,6 @@ a {
   transform: rotate(-100deg);
 }
 /* app css */
-.application {
-}
 .app-img {
   position: relative;
   text-align: center;
@@ -193,12 +183,8 @@ a {
 .app-img img {
   width: 60%;
 }
-.app-txt {
-}
 .app-txt h1 {
   font-size: 50px;
-}
-.app-txt p {
 }
 /* footer css */
 footer {
