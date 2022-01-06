@@ -133,7 +133,7 @@ a {
 }
 .about-img::before {
   width: 89%;
-  background: url("/assets/img/shape-1.png");
+  background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/shape-1.png");
   background-repeat: no-repeat;
   height: 100%;
   top: -65px;
@@ -142,7 +142,7 @@ a {
 }
 .about-img::after {
   width: 35%;
-  background: url("/assets/img/dots.png");
+  background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/dots.png");
   background-repeat: no-repeat;
   height: 100%;
   bottom: -59%;
@@ -165,7 +165,7 @@ a {
   width: 50%;
   bottom: -66%;
   right: -60px;
-  background: url("/assets/img/shap-1.0.png");
+  background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/shap-1.0.png");
   background-repeat: no-repeat;
 }
 /*
