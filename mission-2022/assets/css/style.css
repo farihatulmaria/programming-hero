@@ -218,7 +218,7 @@ footer {
   font-size: 12px;
   font-weight: 200;
 }
-/* Responsive css */
+/* Responsive css
 @media screen and (max-width: 1200px) {
   .container {
     width: 100%;
@@ -280,4 +280,4 @@ footer {
   .about-txt h1 {
     font-size: 30px;
   }
-}
+} */
