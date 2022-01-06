@@ -22,13 +22,16 @@ body {
   margin-left: auto;
 }
 .teal {
-  background: #edf5f6;
+  background: #edf5f6 !important;
 }
 .skin {
-  background: #ffeeee;
+  background: #ffeeee !important;
 }
 .light-yellow {
-  background: #fff4d6;
+  background: #fff4d6 !important;
+}
+.red {
+  color: #ff5959 !important;
 }
 a {
   text-decoration: none;
@@ -58,6 +61,7 @@ a {
   color: #333;
   font-size: 50px;
   line-height: 35px;
+  font-family: "Yeseva One", cursive;
 }
 
 .hero-txt h1.yellow::before {
@@ -109,4 +113,109 @@ a {
   width: 80%;
 }
 .about-txt {
+}
+.about-img {
+  position: relative;
+}
+.about-img::before,
+.about-img::after {
+  position: absolute;
+  z-index: -1;
+  content: "";
+}
+.about-img::before {
+  width: 89%;
+  background: url("/assets/img/mission-2022/shape-1.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  top: -65px;
+  left: -45%;
+  background-size: contain;
+}
+.about-img::after {
+  width: 35%;
+  background: url("/assets/img/mission-2022/dots.png");
+  background-repeat: no-repeat;
+  height: 100%;
+  bottom: -59%;
+  left: -52%;
+  background-size: contain;
+}
+/* community css */
+.community {
+}
+.community-img {
+  position: relative;
+}
+.community-img::before,
+.community-img::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  z-index: -1;
+}
+.community-img::before {
+  width: 47%;
+  background: url("/assets/img/mission-2022/shape-8.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: -99px;
+  left: -97px;
+}
+.community-img::after {
+  width: 72%;
+  background: url("/assets/img/mission-2022/shape-8.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  bottom: -82px;
+  right: -118px;
+  transform: rotate(-100deg);
+}
+/* app css */
+.application {
+}
+.app-img {
+  position: relative;
+  text-align: center;
+}
+.app-img::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("/assets/img/mission-2022/shape-6.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  z-index: -1;
+}
+.app-img img {
+  width: 60%;
+}
+.app-txt {
+}
+.app-txt h1 {
+  font-size: 50px;
+}
+.app-txt p {
+}
+/* footer css */
+footer {
+  padding: 40px 0;
+  background: #0b0d17;
+}
+.footer-txt {
+  text-align: center;
+}
+.footer-txt h2 {
+  color: #fff;
+  font-family: "Lobster", cursive !important;
+  font-weight: 400;
+  font-size: 32px;
+}
+.copy-right {
+  color: #fff;
+  font-size: 12px;
+  font-weight: 200;
 }
