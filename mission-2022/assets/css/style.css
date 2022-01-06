@@ -158,7 +158,9 @@ a {
   font-size: 50px;
   line-height: 35px;
 }
-
+.app-txt {
+  padding-top: 90px;
+}
 /* comment css start*/
 .testimonial {
 }
@@ -225,6 +227,21 @@ footer {
 }
 /* Responsive css */
 @media screen and (max-width: 1200px) {
+  .container {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 27px;
+  }
+  .quater {
+    width: 20%;
+  }
+  .width-40 {
+    width: 33%;
+  }
+  .half-width {
+    width: 47%;
+  }
 }
 
 @media screen and (max-width: 980px) {
@@ -236,6 +253,34 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+  .flexible {
+    display: block;
+  }
+  .half-width {
+    width: 90%;
+  }
+  .quater {
+    width: 60%;
+  }
+  .misson-1,
+  .misson-2,
+  .misson-3 {
+    margin-bottom: 25px;
+  }
+  .width-40 {
+    width: 100%;
+  }
+  .width-60 {
+    width: 80%;
+  }
+  .community-img {
+    margin-top: 50px;
+  }
+  .clients {
+    margin-bottom: 20px;
+  }
+  .testimonial h1 {
+  }
 }
 
 @media screen and (max-width: 320px) {
