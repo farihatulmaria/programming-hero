@@ -47,7 +47,7 @@ a {
   transition: 0.5s;
 }
 .btn:hover {
-  background-color: #f64545;
+  background-color: #ffad5a;
 }
 .width-40 {
   width: 40%;
@@ -55,7 +55,7 @@ a {
 .width-60 {
   width: 60%;
 }
-/* hero css */
+/* hero css start*/
 .hero,
 .about,
 .app,
@@ -94,7 +94,7 @@ a {
 .half-width {
   width: 50%;
 }
-/* misson css */
+/* misson css start*/
 .misson {
   color: #000;
 }
@@ -117,7 +117,7 @@ a {
 .misson img {
   width: 79%;
 }
-/* about css */
+/* about css start */
 
 .about img {
   width: 80%;
@@ -143,53 +143,13 @@ a {
   left: -52%;
   background-size: contain;
 }
-/* community css */
+/* community css start*/
 
-.community-img {
-  position: relative;
-}
-/* .community-img::before,
-.community-img::after {
-  position: absolute;
-  content: "";
-  height: 100%;
-  z-index: -1;
-} */
-/*
-.community-img::before {
-  width: 47%;
-  background: url("/assets/img/shape-8.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: -99px;
-  left: -97px;
-}
- .community-img::after {
-  width: 72%;
-  background: url("/assets/img/shape-8.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  bottom: -82px;
-  right: -118px;
-  transform: rotate(-100deg);
-} */
-/* app css */
+/* app css  start*/
 .app-img {
   position: relative;
   text-align: center;
 }
-/* .app-img::before {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("/assets/img/shape-6.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  content: "";
-  z-index: -1;
-} */
 .app-img img {
   width: 60%;
 }
@@ -199,10 +159,10 @@ a {
   line-height: 35px;
 }
 
-/* comment css */
-.comment {
+/* comment css start*/
+.testimonial {
 }
-.comment span {
+.testimonial span {
   color: #4fbdba;
 }
 .clients-comments {
@@ -231,21 +191,17 @@ a {
 .clients:hover {
   background-color: #c8f9ff;
 }
-/* projects css start */
-.projects {
+.testimonial a svg {
+  font-size: 28px;
+  padding: 10px 10px;
+  color: #fff;
+  background: #000;
+  border-radius: 11px;
+  transition: 0.5s;
 }
-.projects span {
-  color: #7f67fb;
-}
-.projects h1 {
-}
-.projects img {
-  width: 89%;
-  height: 100%;
-}
-.projects p {
-}
-.projects a {
+.testimonial a svg:hover {
+  color: #000;
+  background: #fff;
 }
 /* footer css start */
 footer {
