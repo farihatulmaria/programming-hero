@@ -53,15 +53,21 @@ a {
   width: 60%;
 }
 /* hero css */
-
-.hero-txt h1 {
+.hero,
+.about,
+.misson,
+.app {
+  padding: 50px 0;
+}
+.hero-txt h1,
+.hero-txt h2 {
   color: #333;
   font-size: 50px;
   line-height: 35px;
   font-family: "Yeseva One", cursive;
 }
 
-.hero-txt h1.yellow::before {
+.hero-txt h2.yellow::before {
   position: absolute;
   top: -82px;
   left: -17px;
@@ -74,10 +80,14 @@ a {
 .hero-txt p {
   font-weight: 400;
 }
-
+.hero-img {
+  text-align: center;
+  width: 400px;
+  height: 500px;
+}
 .hero-img img {
-  width: 65% !important;
-  margin-top: -49px;
+  max-width: 100%;
+  margin-top: -16%;
 }
 .half-width {
   width: 50%;
@@ -110,6 +120,9 @@ a {
 .about-img {
   position: relative;
 }
+.about-txt h1 {
+  font-weight: 800;
+}
 .about-img::before,
 .about-img::after {
   position: absolute;
@@ -118,7 +131,7 @@ a {
 }
 .about-img::before {
   width: 89%;
-  background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/mission-2022/shape-1.png");
+  background: url("/assets/img/shape-1.png");
   background-repeat: no-repeat;
   height: 100%;
   top: -65px;
@@ -127,7 +140,7 @@ a {
 }
 .about-img::after {
   width: 35%;
-  background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/mission-2022/dots.png");
+  background: url("/assets/img/dots.png");
   background-repeat: no-repeat;
   height: 100%;
   bottom: -59%;
@@ -147,39 +160,47 @@ a {
   z-index: -1;
 }
 .community-img::before {
+  width: 50%;
+  bottom: -66%;
+  right: -60px;
+  background: url("/assets/img/shap-1.0.png");
+  background-repeat: no-repeat;
+}
+/*
+.community-img::before {
   width: 47%;
-  background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/mission-2022/shape-8.png");
+  background: url("/assets/img/shape-8.png");
   background-repeat: no-repeat;
   background-size: contain;
   top: -99px;
   left: -97px;
 }
-.community-img::after {
+ .community-img::after {
   width: 72%;
-  background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/mission-2022/shape-8.png");
+  background: url("/assets/img/shape-8.png");
   background-repeat: no-repeat;
   background-size: contain;
   bottom: -82px;
   right: -118px;
   transform: rotate(-100deg);
-}
+} */
 /* app css */
 .app-img {
   position: relative;
   text-align: center;
 }
-.app-img::before {
+/* .app-img::before {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/mission-2022/shape-6.png");
+  background: url("/assets/img/shape-6.png");
   background-repeat: no-repeat;
   background-size: contain;
   content: "";
   z-index: -1;
-}
+} */
 .app-img img {
   width: 60%;
 }
@@ -188,6 +209,7 @@ a {
 }
 /* footer css */
 footer {
+  margin-top: 50px;
   padding: 40px 0;
   background: #0b0d17;
 }
