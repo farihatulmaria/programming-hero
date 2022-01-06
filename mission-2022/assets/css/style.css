@@ -44,8 +44,11 @@ a {
   font-weight: 400;
   font-size: 16px;
   color: #fff;
+  transition: 0.5s;
 }
-
+.btn:hover {
+  background-color: #f64545;
+}
 .width-40 {
   width: 40%;
 }
@@ -55,8 +58,8 @@ a {
 /* hero css */
 .hero,
 .about,
-.misson,
-.app {
+.app,
+.projects {
   padding: 50px 0;
 }
 .hero-txt h1,
@@ -131,15 +134,6 @@ a {
   z-index: -1;
   content: "";
 }
-.about-img::before {
-  width: 89%;
-  background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/shape-1.png");
-  background-repeat: no-repeat;
-  height: 100%;
-  top: -65px;
-  left: -45%;
-  background-size: contain;
-}
 .about-img::after {
   width: 35%;
   background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/dots.png");
@@ -154,20 +148,13 @@ a {
 .community-img {
   position: relative;
 }
-.community-img::before,
+/* .community-img::before,
 .community-img::after {
   position: absolute;
   content: "";
   height: 100%;
   z-index: -1;
-}
-.community-img::before {
-  width: 50%;
-  bottom: -66%;
-  right: -60px;
-  background: url("https://farihatulmaria.github.io/programming-hero/mission-2022/assets/img/shap-1.0.png");
-  background-repeat: no-repeat;
-}
+} */
 /*
 .community-img::before {
   width: 47%;
@@ -215,6 +202,9 @@ a {
 /* comment css */
 .comment {
 }
+.comment span {
+  color: #4fbdba;
+}
 .clients-comments {
 }
 .clients {
@@ -234,10 +224,30 @@ a {
   margin: 0 10px;
   border-radius: 13px;
   padding: 50px;
-  background-color: #fff4d6;
+  background-color: #edf5f6;
   border-radius: 7px;
+  transition: 0.5s;
 }
-/* footer css */
+.clients:hover {
+  background-color: #c8f9ff;
+}
+/* projects css start */
+.projects {
+}
+.projects span {
+  color: #7f67fb;
+}
+.projects h1 {
+}
+.projects img {
+  width: 89%;
+  height: 100%;
+}
+.projects p {
+}
+.projects a {
+}
+/* footer css start */
 footer {
   margin-top: 50px;
   padding: 40px 0;
