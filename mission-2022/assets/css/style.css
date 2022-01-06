@@ -82,12 +82,11 @@ a {
 }
 .hero-img {
   text-align: center;
-  width: 400px;
-  height: 500px;
 }
 .hero-img img {
-  max-width: 100%;
+  width: 400px;
   margin-top: -16%;
+  height: 500px;
 }
 .half-width {
   width: 50%;
@@ -204,8 +203,10 @@ a {
 .app-img img {
   width: 60%;
 }
-.app-txt h1 {
+.app-txt h1,
+.app-txt h2 {
   font-size: 50px;
+  line-height: 35px;
 }
 /* footer css */
 footer {
