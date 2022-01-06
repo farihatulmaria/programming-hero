@@ -200,8 +200,8 @@ a {
   transition: 0.5s;
 }
 .testimonial a svg:hover {
-  color: #000;
-  background: #fff;
+  color: #fff;
+  background: teal;
 }
 /* footer css start */
 footer {
@@ -222,4 +222,21 @@ footer {
   color: #fff;
   font-size: 12px;
   font-weight: 200;
+}
+/* Responsive css */
+@media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 980px) {
+}
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 320px) {
 }
