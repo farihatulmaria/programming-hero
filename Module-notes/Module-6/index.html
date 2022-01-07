@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header id="home">
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#table">Table</a></li>
+          <li><a href="#form">Form</a></li>
+          <li>
+            <a href="#semantic">Semantic</a>
+            <ul class="dropdown">
+              <li>
+                <a href="#">link-1</a>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Nobis, consequatur error laborum itaque eveniet optio ipsa
+                  aperiam, iste exercitationem, ratione laboriosam! Labore ex
+                  dolores sit quae quas tenetur in dolorum!
+                </p>
+              </li>
+              <li>
+                <a href="#">link-2</a>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Nobis, consequatur error laborum itaque eveniet optio ipsa
+                  aperiam, iste exercitationem, ratione laboriosam! Labore ex
+                  dolores sit quae quas tenetur in dolorum!
+                </p>
+              </li>
+              <li>
+                <a href="#">link-3</a>
+                <p>
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                  Nobis, consequatur error laborum itaque eveniet optio ipsa
+                  aperiam, iste exercitationem, ratione laboriosam! Labore ex
+                  dolores sit quae quas tenetur in dolorum!
+                </p>
+              </li>
+            </ul>
+          </li>
+          <li><a href="#">About us</a></li>
+        </ul>
+      </nav>
+    </header>
+    <h2>Adding video in HTML5</h2>
+    <video
+      src="../assets/video/color-in-water.mp4"
+      controls
+      autoplay
+      loop
+    ></video>
+    <header id="semantic">
+      <h1>welcome to my website</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos molestias
+        laborum deserunt cumque ea quia molestiae maxime placeat, quaerat
+      </p>
+    </header>
+    <main>
+      <section class="container">
+        <h2>blog-1</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro
+          necessitatibus vel voluptatem tempora mollitia itaque consequuntur,
+          temporibus incidunt veniam dolor accusamus reiciendis saepe omnis
+          voluptates beatae quam tenetur earum!
+        </p>
+      </section>
+      <section class="container">
+        <h2>blog-2</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro
+          necessitatibus vel voluptatem tempora mollitia itaque consequuntur,
+          temporibus incidunt veniam dolor accusamus reiciendis saepe omnis
+          voluptates beatae quam tenetur earum!
+        </p>
+      </section>
+      <section class="container">
+        <h2>blog-3</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo porro
+          necessitatibus vel voluptatem tempora mollitia itaque consequuntur,
+          temporibus incidunt veniam dolor accusamus reiciendis saepe omnis
+          voluptates beatae quam tenetur earum!
+        </p>
+      </section>
+    </main>
+    <footer>
+      <h1>Thanks for visiting my website</h1>
+    </footer>
+
+    <table id="table">
+      <thead>
+        <!-- tr means table row -->
+        <tr>
+          <!-- th means table head -->
+          <th>No.</th>
+          <th>Full Name</th>
+          <th>Position</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <!-- td means table data -->
+          <td>1</td>
+          <td>Bill Gates</td>
+          <td>Founder of Microsoft</td>
+          <td>$1000</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Steve Jobs</td>
+          <td>Founder of Apple</td>
+          <td>$2200</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Larry Page</td>
+          <td>Founder of Google</td>
+          <td>$1400</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>Mark Zuckeberg</td>
+          <td>Founder of Fackbook</td>
+          <td>$1600</td>
+        </tr>
+      </tbody>
+    </table>
+    <form id="form" action="index.html">
+      <label for="f-name">First Name</label>
+      <input type="text" id="f-name" placeholder="Type your first name here" />
+      <label for="l-name">Last Name</label>
+      <input type="text" id="l-name" placeholder="Type your last name here" />
+      <label for="email">E-mail</label>
+      <input type="email" id="email" placeholder="Type your email here" />
+      <fieldset>
+        <legend>Select your web</legend>
+        <p><input type="radio" name="blog" id="blog" />blog</p>
+        <p><input type="radio" name="protfolio" id="protfolioi" />protfolio</p>
+        <p><input type="radio" name="business" id="business" />business</p>
+        <p><input type="radio" name="study" id="study" />study</p>
+        <p><input type="radio" name="education" id="education" />education</p>
+      </fieldset>
+      <textarea
+        name="message"
+        id="message"
+        cols="30"
+        rows="10"
+        placeholder="Type your Message Here"
+      ></textarea>
+      <input type="submit" value="Submit Message" />
+    </form>
+
+    <h2>Having fun with svg tag</h2>
+    <svg viewBox="0 0 500 500">
+      <circle cx="100" cy="100" r="82" fill="#FABB51"></circle>
+      <circle cx="65" cy="90" r="18" fill="#000"></circle>
+      <circle cx="140" cy="90" r="18" fill="#000"></circle>
+      <path
+        d="M65 125 A1, 0.8 0 0, 0 130 125"
+        stroke="#333"
+        stroke-width="10"
+      ></path>
+    </svg>
+  </body>
+</html>
