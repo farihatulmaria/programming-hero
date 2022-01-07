@@ -222,6 +222,11 @@ footer {
 }
 /* Responsive css */
 @media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 980px) {
+}
+@media screen and (max-width: 768px) {
   .container {
     width: 100%;
     margin-right: auto;
@@ -237,11 +242,6 @@ footer {
   .half-width {
     width: 47%;
   }
-}
-
-@media screen and (max-width: 980px) {
-}
-@media screen and (max-width: 768px) {
 }
 
 @media screen and (max-width: 640px) {
