@@ -69,3 +69,11 @@
   overflow: hidden;
   text-overflow: ellipsis !important;
 }
+/* image */
+img {
+  width: 500px;
+}
+/* font awesome icons  */
+svg {
+  font-size: 50px !important;
+}
