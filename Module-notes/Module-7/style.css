@@ -1,0 +1,71 @@
+/* visibility hidden VS diplay none */
+
+.box {
+  height: 200px;
+  width: 200px;
+  background: #072227;
+  margin: 5px 5px;
+}
+#box-1 {
+  background: #8946a6;
+}
+#box-2 {
+  background: #072227;
+  /* The visibility property specifies whether or not an element is visible. */
+
+  visibility: hidden;
+  /* Hidden elements take up space on the page. Use the display property to both hide and remove an element from the document layout! */
+}
+#box-3 {
+  background: #9145b6;
+}
+#box-4 {
+  background: #9a0680;
+}
+#box-5 {
+  background: #700b97;
+  /* The display property specifies the display behavior (the type of rendering box) of an element.
+  The element is completely removed */
+  display: none;
+}
+
+/* overflow */
+.content-box {
+  width: 300px;
+  height: 300px;
+  background: #000;
+  color: #fff;
+  margin: 10px 10px;
+}
+#content-1 {
+  /* The overflow property only works for block elements with a specified height. */
+
+  /* The overflow is clipped, but a scroll-bar is added to see the rest of the content */
+  overflow: scroll;
+}
+#content-2 {
+  /* The overflow is not clipped. It renders outside the element's box. This is default */
+  overflow: visible;
+}
+
+#content-3 {
+  /* The overflow is clipped, and the rest of the content will be invisible */
+  overflow: hidden;
+}
+#content-4 {
+  overflow-x: scroll;
+  overflow-y: scroll;
+}
+#content-5 {
+  width: 50px;
+  height: 50px;
+  background: #fff;
+  color: #000;
+  border: 2px solid #072227;
+  overflow: hidden;
+}
+#content-5 p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis !important;
+}
