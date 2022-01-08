@@ -69,11 +69,123 @@
   overflow: hidden;
   text-overflow: ellipsis !important;
 }
-/* image */
+/* img */
 img {
   width: 500px;
 }
-/* font awesome icons  */
+/*  icons  */
 svg {
   font-size: 50px !important;
+}
+/* transform */
+.container {
+  width: 200px;
+  height: 200px;
+  border: 2px solid seagreen;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.innner-1 {
+  /* The scale() method increases or decreases the size of an element (according to the parameters given for the width and height). */
+  transform: scale(3);
+}
+
+.innner-2 {
+  /* The rotate() method rotates an element clockwise or counter-clockwise according to a given degree. */
+  transform: rotate(45deg);
+}
+
+.innner-3 {
+  /* The translate() method moves an element from its current position (according to the parameters given for the X-axis and the Y-axis). */
+  transform: translate(100px);
+}
+.innner-4 {
+  transform: translateX(50px);
+}
+.innner-5 {
+  transform: translateY(50px);
+}
+/* transition */
+#div-1,
+#div-2,
+#div-3,
+#div-4,
+#div-5 {
+  width: 100px;
+  height: 100px;
+  background: #9145b6;
+  color: #fff;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#div-1:hover,
+#div-2:hover,
+#div-3:hover,
+#div-4:hover,
+#div-5:hover {
+  width: 100%;
+}
+#div-1 {
+  transition: 3s ease;
+}
+#div-2 {
+  transition: 3s ease-in;
+}
+#div-3 {
+  transition: 3s ease-in-out;
+}
+#div-4 {
+  transition: 3s ease-out;
+}
+#div-5 {
+  transition: 3s linear;
+}
+#div-6 {
+  width: 100px;
+  height: 100px;
+  background: #700b97;
+  transition: 1s ease-in-out;
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 50%;
+}
+#div-6:hover {
+  width: 200px;
+  height: 200px;
+  transform: rotate(360deg);
+}
+/* cricket aniamtion */
+.field {
+  width: 100%;
+  height: 100vh;
+  background: seagreen;
+}
+
+.bat {
+  transform: rotate(30deg);
+  transition: 0.3s ease-in-out;
+  transform-origin: top right;
+}
+.field:hover .bat {
+  transform: rotate(-60deg);
+}
+.ball {
+  width: 50px;
+  height: 50px;
+  background: #ff0000ba;
+  border-radius: 50%;
+  position: relative;
+  left: 48%;
+  top: -16%;
+  transition: 0.2s ease-in-out 0.3s;
+}
+.field:hover .ball {
+  transform: translate(525px, -380px);
 }
