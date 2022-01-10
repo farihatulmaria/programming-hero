@@ -1,0 +1,35 @@
+.photo-album {
+  display: flex;
+  flex-wrap: wrap;
+}
+.photo-frame {
+  width: 300px;
+  height: 200px;
+  border: 2px solid darkblue;
+  border-radius: 5px;
+  position: relative;
+  transition: 1s;
+  margin: 10px;
+  overflow: hidden;
+}
+.photo img {
+  width: 100%;
+  height: 200px;
+}
+.photo-content {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  color: #fff;
+  display: none;
+  transition: 1s;
+}
+.photo-frame:hover .photo-content {
+  display: block;
+  background: rgba(0, 0, 0, 0.69);
+  transition: 2s ease-in-out;
+}
+.photo-frame:hover .photo img {
+  transform: scale(1.2);
+  transition: 1s ease-in-out;
+}
