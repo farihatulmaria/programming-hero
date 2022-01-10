@@ -1,0 +1,42 @@
+a {
+  text-decoration: none;
+}
+/* navbar css */
+header {
+  margin: 20px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav a {
+  color: #000;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px 5px;
+}
+/* login form css */
+.login-container {
+  display: flex;
+  justify-content: center;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form input,
+button {
+  font-size: 1.3em;
+  margin-top: 15px;
+  outline: none;
+  color: #fff;
+
+  padding: 10px;
+}
+.login-form button {
+  background: #142850;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+}

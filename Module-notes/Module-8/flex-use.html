@@ -4,15 +4,43 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="flex-use.css" />
+    <link
+      rel="stylesheet"
+      href="../assets/third-party/fontawesome-free-5.15.3/css/all.css"
+    />
     <title>flex-use</title>
   </head>
   <body>
+    <header>
+      <nav>
+        <span>
+          <a href="flex-use.html">home</a>
+          <a href="#">about</a>
+          <a href="#">services</a>
+          <a href="#">blogs</a>
+          <a href="#">contact</a>
+        </span>
+        <span>
+          <a href="#"><i class="fas fa-user"></i></a>
+          <a href="#"><i class="fas fa-sign-out-alt"></i></a>
+        </span>
+      </nav>
+    </header>
     <section class="login-container">
       <form action="flex-use.html" class="login-form">
         <h2>Login</h2>
-        <input type="email" name="email" placeholder="Your mail" />
-        <input type="email" name="password" placeholder="Your password" />
+        <input type="email" name="email" placeholder="Your mail" required />
+        <input
+          type="email"
+          name="password"
+          placeholder="Your password"
+          required
+        />
+        <button type="submit">login</button>
       </form>
     </section>
+    <!-- scripts -->
+    <script src="../assets/third-party/fontawesome-free-5.15.3/js/all.js"></script>
   </body>
 </html>

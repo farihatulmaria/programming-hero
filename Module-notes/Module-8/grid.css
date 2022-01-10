@@ -1,0 +1,29 @@
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  grid-gap: 20px;
+  /* grid property     
+  grid: none|grid-template-rows / grid-template-columns|grid-template-areas|grid-template-rows / [grid-auto-flow] grid-auto-columns|[grid-auto-flow] grid-auto-rows / grid-template-columns|initial|inherit;
+
+  none - Default value. No specific sizing of the columns or rows
+
+  grid-template-rows / grid-template-columns - Specifies the size(s) of the columns and rows   
+
+  grid-template-areas - Specifies the grid layout using named items
+
+  grid-template-rows / grid-auto-columns - Specifies the size (height) of the rows, and the auto size of the columns
+
+  grid-auto-rows / grid-template-columns - Specifies the auto size of the rows, and sets the grid-template-columns property
+
+  grid-template-rows / grid-auto-flow grid-auto-columns - Specifies the size (height) of the rows, and how to place auto-placed items, and the auto size of the columns
+
+  grid-auto-flow grid-auto-rows / grid-template-columns - Specifies how to place auto-placed items, and the auto size of the rows, and sets the grid-template-columns property
+
+  initial - Sets this property to its default value
+  inherit - Inherits this property from its parent element.
+  */
+}
+.gird-cell {
+  border: 1px solid goldenrod;
+  padding: 20px;
+}

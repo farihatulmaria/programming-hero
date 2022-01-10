@@ -1,0 +1,33 @@
+.color-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.color {
+  width: 500px;
+  margin: 10px;
+}
+.color img {
+  width: 75%;
+}
+/* Responsive css */
+/* media query is used to apply a set of styes based on the brower's characteristics including width, height ,or screen resolution */
+
+/* @media screen and (max-width: 1200px) {
+}
+
+@media screen and (max-width: 980px) {
+  .color-container {
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 768px) {
+}
+
+@media screen and (max-width: 640px) {
+}
+
+@media screen and (max-width: 480px) {
+}
+
+@media screen and (max-width: 320px) {
+} */
