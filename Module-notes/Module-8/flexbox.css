@@ -1,0 +1,82 @@
+.container {
+  width: 100%;
+  height: 20vh;
+  border: 2px solid #072227;
+  display: flex;
+  justify-content: space-between;
+  /* The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally). */
+  /* Tip: Use the align-items property to align the items vertically. */
+  /* flex-start - Default value. Items are positioned at the beginning of the container 
+  flex-end - Items are positioned in the end of the container 
+  center - Items are positioned in the center of the container 
+  space-between - Items will have space between them
+  space-around - Items will have space before, between , and after them
+  space-evenly - Items will have equal space around them
+  initial - Sets this property to its default value.
+  inherit - Inherit this property from its parent element
+  */
+  align-items: center;
+}
+.flex-box {
+  background: #35858b;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  /* The align-items property defines the default behavior for how items are laid out along the cross axis (perpendicular to the main axis). Imagine a horizontal flexbox layout. That horizontal flow is the main axis, so align-items is the alignment opposite that, on the vertical axis.
+  */
+  /* strecth - Default. Items are stretched to fit the container
+     center - Items are positioned at the center of the container
+     flex-start - Items are positioned at the beginning of the container
+     flex-end - Items are positioned at the end of the container
+     baseline - Items are positioned at the baseline of the container
+     initial - Sets this property to its default value
+     inherit - Inherits this property from its parent element.
+  */
+  justify-content: center;
+  margin: 5px;
+  color: #fff;
+  text-transform: capitalize;
+  font-size: 20px;
+}
+.container-2 {
+  width: 100%;
+  height: 20vh;
+  border: 2px solid #072227;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+.container-3 {
+  width: 100%;
+  height: 20vh;
+  border: 2px solid #072227;
+  display: flex;
+  align-items: flex-end;
+  justify-content: baseline;
+}
+.container-4 {
+  width: 100%;
+  height: 20vh;
+  border: 2px solid #072227;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-evenly;
+}
+.container-5 {
+  width: 100%;
+  height: 20vh;
+  border: 2px solid #072227;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+#flex-1 {
+  height: auto;
+  order: 2;
+}
+#flex-2 {
+  order: 1;
+  height: auto;
+  flex-grow: 1;
+}

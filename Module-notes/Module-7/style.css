@@ -184,7 +184,7 @@ svg {
   position: relative;
   left: 48%;
   top: -16%;
-  transition: 0.2s ease-in-out 0.3s;
+  transition: transform 0.2s ease-in-out 0.3s;
 }
 .field:hover .ball {
   transform: translate(525px, -380px);
