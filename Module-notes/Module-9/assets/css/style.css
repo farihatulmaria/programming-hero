@@ -31,6 +31,7 @@ main {
   border-radius: 5px;
   margin-top: 21px;
 }
+
 /* top-players css start */
 
 .top-palyers {
@@ -85,8 +86,38 @@ main {
 }
 /* top-blogs css end */
 /* course css start */
+.latest-course {
+}
+.course-container {
+}
+.course {
+}
 .course-banner img {
   width: 224px;
   height: 104px;
+}
+.course-content {
+}
+.course-title {
+}
+.course-author {
+}
+.cousre-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.rating svg {
+  color: #e7e7e7;
+  font-size: 12px !important;
+}
+svg.filled {
+  color: #ffc014;
+}
+.course-duration {
+  border-radius: 20px;
+  background: #ffe4e8;
+  color: red;
+  padding: 5px 10px;
 }
 /* course css end */
