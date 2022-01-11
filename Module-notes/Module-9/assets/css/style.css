@@ -1,8 +1,13 @@
-/* default css */
+/* ------------------------
+     default css 
+----------------------------
+*/
 
 body {
   font-family: "Poppins", sans-serif;
   background: #f3f1ff;
+  margin: 0;
+  padding: 0;
 }
 a {
   text-decoration: none;
@@ -22,7 +27,7 @@ main {
   font-size: 24px;
   color: #562eff;
   margin: 0;
-  margin-bottom: 4px;
+  margin-bottom: 24px;
 }
 .container {
   width: 870px;
@@ -32,7 +37,9 @@ main {
   margin-top: 21px;
 }
 
-/* top-players css start */
+/*----------------------------
+    top-players css start
+---------------------------- */
 
 .top-palyers {
   background: #fff;
@@ -56,11 +63,14 @@ main {
   font-weight: 600;
 }
 
-/* top-player css end */
-/* top-blogs css start */
+/* ----------------------------
+    top-player css end
+---------------------------- */
 
-.top-blogs {
-}
+/* ----------------------------
+     top-blogs css start 
+----------------------------*/
+
 .blogs-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -84,32 +94,38 @@ main {
 .blog-author a {
   color: #562eff;
 }
-/* top-blogs css end */
-/* course css start */
-.latest-course {
-}
+/* ----------------------------
+    top-blogs css end 
+---------------------------- */
+/*----------------------------
+    course css start
+ ---------------------------- */
+
 .course-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
 }
 .course {
+  width: 250px;
+  height: 300px;
+  box-shadow: 0 10px 16px #ddd;
+  padding: 13px;
+  border-radius: 9px;
 }
 .course-banner img {
   width: 224px;
   height: 104px;
 }
-.course-content {
-}
-.course-title {
-}
-.course-author {
-}
+
 .cousre-info {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   align-items: center;
-  justify-content: space-between;
 }
 .rating svg {
   color: #e7e7e7;
-  font-size: 12px !important;
+  font-size: 10px !important;
 }
 svg.filled {
   color: #ffc014;
@@ -118,6 +134,56 @@ svg.filled {
   border-radius: 20px;
   background: #ffe4e8;
   color: red;
-  padding: 5px 10px;
+  padding: 9px 12px;
+  font-size: 12px;
 }
-/* course css end */
+/*----------------------------
+    course css end 
+ ----------------------------*/
+
+/* ----------------------------
+    Responsive css 
+ ---------------------------- */
+@media screen and (max-width: 1200px) {
+}
+@media screen and (max-width: 980px) {
+}
+@media screen and (max-width: 768px) {
+  .container {
+    width: 550px;
+  }
+  .blogs-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .course-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .course img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media only screen and (max-width: 688px) {
+  .container {
+    width: 400px;
+  }
+  .player-container,
+  .blogs-container,
+  .course-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .course {
+    width: 90%;
+    height: 90%;
+  }
+  .course img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@media screen and (max-width: 480px) {
+}
+@media screen and (max-width: 320px) {
+}
