@@ -1,0 +1,31 @@
+h1 {
+  color: rgb(63, 55, 55) !important;
+}
+/* class and id are different from other things */
+.colored {
+  width: 100px;
+  height: 100px;
+  background-color: lightpink;
+  color: #8b0045;
+  font-size: 20px;
+}
+/* h1 {
+  color: rgb(63, 55, 55);
+} */
+h1 {
+  color: darkblue;
+}
+#h3-tag {
+  border: 2px solid crimson;
+}
+p {
+  width: 300px;
+  height: 300px;
+  border: 2px solid crimson;
+}
+
+/*
+style-attributs  id  class,psuedo-class,atrribute element
+
+more              ------------------->           least
+specificity                                   specificity */
