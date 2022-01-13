@@ -1,0 +1,78 @@
+/* -------------------
+     default css 
+-----------------------*/
+body {
+  margin: 0;
+  padding: 0;
+}
+ul {
+  list-style-type: none;
+  padding: 50px;
+}
+a {
+  text-decoration: none;
+}
+/* -------------------
+     mega-menu css 
+-----------------------*/
+
+header {
+}
+nav {
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+}
+nav li {
+  background-color: #000;
+  margin-right: 20px;
+  padding: 12px;
+  transition: 0.5s;
+  position: relative;
+}
+nav li a {
+  color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+}
+nav li:hover .drop-down {
+  opacity: 1;
+}
+.drop-down {
+  position: absolute;
+  background-color: #000;
+  width: 200px;
+  color: #fff;
+  top: 55px;
+  left: -55px;
+  opacity: 0;
+  transition: 0.5s;
+}
+.drop-down ul {
+  display: block;
+  padding: 20px !important;
+  width: 100%;
+}
+.drop-down li {
+  margin-right: 0;
+  background-color: transparent;
+  margin-bottom: 8px;
+}
+nav li:hover .mega {
+  height: 500px !important;
+}
+nav > ul > li:hover > .mega-menu {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.mega-menu {
+  padding: 0 20px;
+  width: 500px;
+}
+.mega-menu li {
+  padding: 0;
+}
+.mega-menu h3 {
+  color: #fff !important;
+}
