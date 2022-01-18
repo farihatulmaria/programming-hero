@@ -1,0 +1,32 @@
+nav {
+  background: #562eff;
+}
+nav a {
+  color: #fff !important;
+}
+a {
+  text-decoration: none;
+  color: #562eff;
+}
+p {
+  color: #acacac;
+  font-size: 20px;
+}
+nav svg {
+  color: #fff !important;
+}
+ul li {
+  margin: 0 10px;
+}
+main {
+  background: #f3f1ff;
+}
+hr {
+  margin: 5px 0;
+  background: #9b9b9b;
+  height: 3px !important;
+}
+.section-title {
+  color: #562eff;
+  font-size: 24px;
+}
