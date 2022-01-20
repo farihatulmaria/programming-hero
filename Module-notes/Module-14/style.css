@@ -12,7 +12,33 @@ body {
   margin: 0;
   padding: 0;
 }
+section {
+  margin: 50px 0;
+}
+button {
+  background-image: linear-gradient(to bottom, #ff589b 0%, #ff136f 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 25px;
+  cursor: pointer;
+}
 /*==================
     main css
 ===================*/
-/* header */
+/* slider */
+.price {
+  color: #ff136f;
+}
+.bg-light-pink {
+  background-color: #fceae8;
+  border-radius: 10px;
+}
+/* categories */
+.bg-dark-pink {
+  background-color: #ff136f;
+  border-radius: 10px;
+}
+.categories img {
+  width: 100px;
+}
