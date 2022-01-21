@@ -21,7 +21,6 @@ button {
   border: none;
   border-radius: 8px;
   padding: 9px 25px;
-  cursor: pointer;
 }
 /*==================
     main css
@@ -41,4 +40,14 @@ button {
 }
 .categories img {
   width: 100px;
+}
+/* footer */
+input {
+  background: #fff;
+  color: #666;
+  height: 43px;
+  width: 31%;
+  border: none;
+  padding: 0 20px;
+  margin-right: -5px;
 }
