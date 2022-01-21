@@ -2,8 +2,9 @@
   1. default css
   2. main css
     2.1 header
-
-
+    2.2 slider
+    2.3 categories
+    2.4 footer
 */
 /*==================
     default css
@@ -25,7 +26,18 @@ button {
 /*==================
     main css
 ===================*/
+/* header */
+nav {
+  transition: 0.5s;
+}
+nav.sticky {
+  background: #fff;
+  box-shadow: 0 0 25px #666;
+}
 /* slider */
+.slider {
+  margin: 100px 0;
+}
 .price {
   color: #ff136f;
 }
