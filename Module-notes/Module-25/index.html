@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>DOM Events</title>
+  </head>
+  <body>
+    <h2>Learning onclick in button</h2>
+    <button onclick="alert(40)">Event Button-1</button>
+    <!-- system 1 for something -->
+    <button onclick="document.body.style.background = '#f5f5f5'">
+      Event Button-2
+    </button>
+    <!-- system 2 for doning something -->
+    <button onclick="makeTextCenter()">Event Button-3</button>
+
+    <!-- system 3 for doning something -->
+    <button id="btn-4">Event Button-4</button>
+
+    <!-- system 4 for doning something -->
+    <button id="btn-5">Event Button-5</button>
+    <p id="hidden-p"></p>
+    <button id="show">click me to see the hidden p</button>
+
+    <form action="index.html">
+      <input type="text" placeholder=" Enter you name : " />
+      <button id="update-btn">update</button>
+    </form>
+
+    <!-- scripts -->
+
+    <!-- comments-section -->
+
+    <section>
+      <div id="comment-container">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Velit,
+          maiores perferendis? Perspiciatis, magnam cum ex dolorem consequuntur
+          tempore? Incidunt laudantium eos laboriosam quam quis aut repellat
+          doloremque enim earum neque?
+        </p>
+        <p>
+          Pariatur nihil sint voluptate, minus cum modi. Rem, tempore
+          praesentium. Fuga minima provident sequi, animi, corporis veritatis
+          iste voluptate deserunt pariatur repellendus, dignissimos eveniet
+          ipsam vero explicabo? Quam, sint enim?
+        </p>
+      </div>
+      <div>
+        <p>Add your comments here</p>
+        <textarea
+          name="comment"
+          id="comment-area"
+          cols="50"
+          rows="6"
+        ></textarea>
+        <button id="post-btn">post comment</button>
+      </div>
+    </section>
+
+    <section>
+      <h3 id="annoying-things">
+        Deleteing annoying things like: coding etc 🤬
+      </h3>
+      <input
+        id="delete-inputs"
+        type="text"
+        placeholder="Type delete to delete somting"
+      />
+      <button id="delete-btn" disabled>delete</button>
+    </section>
+
+    <section id="containers">
+      <h3>Event Bubble</h3>
+      <ul id="list-container">
+        <li class="items">Lorem ipsum dolor sit amet.</li>
+        <li id="second" class="items">Est saepe esse mollitia repellendus?</li>
+        <li class="items">Ad nemo nihil eum molestias?</li>
+        <li class="items">Consectetur perferendis laborum ea facilis.</li>
+        <li class="items">Perferendis aut magni qui deserunt.</li>
+        <li class="items">At doloribus magnam veniam labore?</li>
+      </ul>
+    </section>
+
+    <section>
+      <div id="container">
+        <h3>Event Delegate</h3>
+        <ul id="item-container">
+          <li class="item">Lorem ipsum dolor sit amet.</li>
+          <li class="item">Eaque quasi quisquam illum ipsam.</li>
+          <li class="item">Rerum aliquid voluptates soluta cum.</li>
+          <li class="item">Dolorum distinctio enim adipisci error.</li>
+          <li class="item">Iste voluptates perspiciatis dolor ea?</li>
+          <li class="item">Vero inventore blanditiis eius nesciunt.</li>
+        </ul>
+        <button id="add-items">add items</button>
+      </div>
+    </section>
+    <script></script>
+    <script src="init.js"></script>
+  </body>
+</html>
