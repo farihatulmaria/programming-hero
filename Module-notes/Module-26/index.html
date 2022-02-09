@@ -4,13 +4,45 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- main css -->
+    <link rel="stylesheet" href="output.css" />
+    <!-- main css -->
     <link rel="stylesheet" href="style.css" />
     <title>Bank</title>
   </head>
   <body>
     <header>
-      <h1>Welcome to my Bank</h1>
+      <h1 class="text-3xl text-center my-4 capitalize">
+        welcome to <span class="font-semibold">my bank</span>
+      </h1>
     </header>
+    <main>
+      <section class="container text-center my-6 mx-auto p-7 bg-gray-300">
+        <h3 class="capitalize text-xl my-3">Please login</h3>
+        <div class="block lg:block">
+          <input
+            type="email"
+            class="my-5 mx-2 py-3 px-5"
+            id="user-email"
+            placeholder="Type Tour Email Here"
+          />
+          <input
+            type="password"
+            class="my-5 mx-2 py-3 px-5"
+            id="user-password"
+            placeholder="Type Tour Password Here"
+          />
+          <br />
+          <button
+            type="submit"
+            id="submit-btn"
+            class="py-3 sm:w-2/4 lg:w-1/4 rounded-3xl uppercase bg-white"
+          >
+            submit
+          </button>
+        </div>
+      </section>
+    </main>
     <script src="init.js"></script>
   </body>
 </html>
