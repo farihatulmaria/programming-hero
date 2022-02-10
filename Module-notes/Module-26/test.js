@@ -5,8 +5,8 @@
 let dnum = doubleNum(5);
 console.log(dnum); */
 
-function getInputvalue() {
-  const depositInput = document.getElementById("deposit-input");
+function getInputvalue(inputId) {
+  const depositInput = document.getElementById(inputId);
   const depositAmount = depositInput.value;
   const newDepositAmount = parseFloat(depositAmount);
   depositInput.value = "";
@@ -16,7 +16,7 @@ function getInputvalue() {
 // depostie btn click function
 
 document.getElementById("depostie-btn").addEventListener("click", function () {
-  const newDepositAmount = getInputvalue();
+  const newDepositAmount = getInputvalue("deposit-input");
 
   const depostiTotal = document.getElementById("deposit-total");
 
@@ -40,9 +40,7 @@ document.getElementById("depostie-btn").addEventListener("click", function () {
 // withdraw btn click function
 
 document.getElementById("withdraw-btn").addEventListener("click", function () {
-  const withdrawInput = document.getElementById("withdraw-input");
-  const withDrawAmount = withdrawInput.value;
-  const newWithdrawAmount = parseFloat(withDrawAmount);
+  const newWithdrawAmount = getInputvalue("withdraw-input");
 
   const withdrawTotal = document.getElementById("withdraw-total");
 
@@ -52,8 +50,6 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
   const newWithDrawTotal = perviouseWithDraw + newWithdrawAmount;
 
   withdrawTotal.innerText = newWithDrawTotal;
-
-  withdrawInput.value = "";
 
   // withdrawing money from balance
 
