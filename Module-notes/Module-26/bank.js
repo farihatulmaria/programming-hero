@@ -1,55 +1,60 @@
-/* function doubleNum(num) {
-  const result = num * 2;
-  return result;
+function getInputvalue(inputId) {
+  const input = document.getElementById(inputId);
+  const Amount = input.value;
+  const newAmount = parseFloat(Amount);
+  input.value = "";
+  return newAmount;
 }
-let dnum = doubleNum(5);
-console.log(dnum); */
+function getTotal(totalId, newAmount) {
+  const total = document.getElementById(totalId);
+
+  const perviousAmountText = total.innerText;
+  const perviousAmount = parseFloat(perviousAmountText);
+  total.innerText = perviousAmount + newAmount;
+}
+function getCurrentBalance() {
+  const balanceTotal = document.getElementById("balance-total");
+
+  const balancePerviousAmount = balanceTotal.innerText;
+  const perviousBalanceAmount = parseFloat(balancePerviousAmount);
+  return perviousBalanceAmount;
+}
+function updateBalance(newAmount, isAdd) {
+  const balanceTotal = document.getElementById("balance-total");
+
+  /* const balancePerviousAmount = balanceTotal.innerText;
+  const perviousBalanceAmount = parseFloat(balancePerviousAmount); */
+  const perviousBalanceAmount = getCurrentBalance();
+  if (isAdd == true) {
+    balanceTotal.innerText = perviousBalanceAmount + newAmount;
+  } else {
+    balanceTotal.innerText = perviousBalanceAmount - newAmount;
+  }
+}
 
 // depostie btn click function
 
 document.getElementById("depostie-btn").addEventListener("click", function () {
-  const depositInput = document.getElementById("deposit-input");
-  const newDepositAmount = depositInput.value;
+  const newDepositAmount = getInputvalue("deposit-input");
+  if (newDepositAmount > 0) {
+    getTotal("deposit-total", newDepositAmount);
 
-  const depostiTotal = document.getElementById("deposit-total");
-
-  const perviousDepositAmount = depostiTotal.innerText;
-  const newDepositTotal =
-    parseFloat(perviousDepositAmount) + parseFloat(newDepositAmount);
-
-  depostiTotal.innerText = newDepositTotal;
-
-  depositInput.value = "";
-  // adding deposti to balance
-  const balanceTotal = document.getElementById("balance-total");
-  const perviousBalanceAmount = balanceTotal.innerText;
-  const newBalanceTotal =
-    parseFloat(perviousBalanceAmount) + parseFloat(newDepositAmount);
-  balanceTotal.innerText = newBalanceTotal;
+    // adding deposti to balance
+    updateBalance(newDepositAmount, true);
+  }
 });
 
 // withdraw btn click function
-
 document.getElementById("withdraw-btn").addEventListener("click", function () {
-  const withdrawInput = document.getElementById("withdraw-input");
-  const withDrawAmount = withdrawInput.value;
-  const newWithdrawAmount = parseFloat(withDrawAmount);
+  const newWithdrawAmount = getInputvalue("withdraw-input");
+  const currentBalance = getCurrentBalance();
+  if (newWithdrawAmount > 0 && newWithdrawAmount < currentBalance) {
+    getTotal("withdraw-total", newWithdrawAmount);
 
-  const withdrawTotal = document.getElementById("withdraw-total");
-  const perviousWithDrawText = withdrawTotal.innerText;
-  const perviouseWithDraw = parseFloat(perviousWithDrawText);
+    // withdrawing money from balance
 
-  const newWithDrawTotal = perviouseWithDraw + newWithdrawAmount;
-
-  withdrawTotal.innerText = newWithDrawTotal;
-
-  withdrawInput.value = "";
-
-  // withdrawing money from balance
-
-  const balanceTotal = document.getElementById("balance-total");
-  const perviousBalanceAmount = balanceTotal.innerText;
-  const newBalanceTotal =
-    parseFloat(perviousBalanceAmount) - parseFloat(newWithdrawAmount);
-  balanceTotal.innerText = newBalanceTotal;
+    updateBalance(newWithdrawAmount, false);
+  } else if (newWithdrawAmount < currentBalance) {
+    console.log("no money for you");
+  }
 });
