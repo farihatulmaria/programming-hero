@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output-bank.css" />
+    <link rel="stylesheet" href="bank.css" />
+    <title>My Bank</title>
+  </head>
+  <body>
+    <header>
+      <h1 class="text-3xl text-center my-4 capitalize">
+        welcome to <span class="font-semibold">my bank</span>
+      </h1>
+    </header>
+    <main>
+      <section class="container text-center my-6 mx-auto p-7">
+        <div
+          class="grid gap-4 grid-cols-3 grid-rows-3 container md:grid-cols-1"
+        >
+          <div
+            class="bg-blue-500 p-5 text-white font-bold rounded-md text-center"
+          >
+            <h2>Depostie</h2>
+            <p class="my-3 font-thin">$<span id="deposit-total">00</span></p>
+          </div>
+          <div
+            class="bg-blue-500 p-5 text-white font-bold rounded-md text-center"
+          >
+            <h2>withdraw</h2>
+            <p class="my-3 font-thin">$<span id="withdraw-total">00</span></p>
+          </div>
+          <div
+            class="bg-blue-500 p-5 text-white font-bold rounded-md text-center"
+          >
+            <h2>balance</h2>
+            <p class="my-3 font-thin">$<span id="balance-total">100</span></p>
+          </div>
+        </div>
+      </section>
+      <section class="container text-center my-6 mx-auto p-7">
+        <h3 class="text-2xl">Please Depostie</h3>
+
+        <div class="grid grid-cols-2 items-center my-5 gap-2 md:grid-cols-1">
+          <div class="bg-blue-500 p-5">
+            <h3 class="text-white text-2xl font-semibold">Depostie</h3>
+            <input
+              type="number"
+              class="my-5 mx-2 py-3 px-5"
+              id="deposit-input"
+              placeholder="Amount Of Money You Want To Depostie"
+            />
+            <br />
+            <button
+              id="depostie-btn"
+              class="py-3 sm:w-2/4 lg:w-1/4 rounded-3xl uppercase bg-white"
+            >
+              depostie
+            </button>
+          </div>
+          <div class="bg-blue-500 p-5">
+            <h3 class="text-white text-2xl font-semibold">Withdraw</h3>
+            <input
+              type="number"
+              class="my-5 mx-2 py-3 px-5"
+              id="withdraw-input"
+              placeholder="Amount Of Money You Want To Withdraw"
+            />
+            <br />
+            <button
+              id="withdraw-btn"
+              class="py-3 sm:w-2/4 lg:w-1/4 rounded-3xl uppercase bg-white"
+            >
+              withdraw
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="bank.js"></script>
+  </body>
+</html>
