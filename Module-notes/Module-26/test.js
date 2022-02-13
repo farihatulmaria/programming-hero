@@ -1,3 +1,4 @@
+/*
 function getInputvalue(inputId) {
   const input = document.getElementById(inputId);
   const Amount = input.value;
@@ -24,6 +25,7 @@ function updateBalance(newAmount, isAdd) {
 
   /* const balancePerviousAmount = balanceTotal.innerText;
   const perviousBalanceAmount = parseFloat(balancePerviousAmount); */
+/*
   const perviousBalanceAmount = getCurrentBalance();
   if (isAdd == true) {
     balanceTotal.innerText = perviousBalanceAmount + newAmount;
@@ -58,3 +60,4 @@ document.getElementById("withdraw-btn").addEventListener("click", function () {
     console.log("no money for you");
   }
 });
+*/
