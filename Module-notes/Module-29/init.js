@@ -231,3 +231,35 @@ function getFullName(fristName, lastName) {
 getFullName("Gerald", " M.", " Loyd");
 
 // error handing with try-catch
+
+const name2 = "ami";
+try {
+  name2 = "tomi";
+} catch (error) {
+  console.log(name2);
+}
+
+const myFavDate = new Date("1971-12-16");
+//  y(year) m(month) d(day)  y    m   d
+console.log(myFavDate);
+
+const myFavAnotherDate = new Date(1971, 3, 5, 11, 50, 20, 2);
+console.log(myFavAnotherDate);
+
+// Coordinated Universal Time (UTC)
+
+/* 
+getFullYear() --	Get the year as a four digit number (yyyy)
+getMonth() --	Get the month as a number (0-11)
+getDate() --	Get the day as a number (1-31)
+getHours() --	Get the hour (0-23)
+getMinutes() --	Get the minute (0-59)
+getSeconds() --	Get the second (0-59)
+getMilliseconds() --	Get the millisecond (0-999)
+getTime() --	Get the time (milliseconds since January 1, 1970)
+getDay() --	Get the weekday as a number (0-6)
+Date.now() --	Get the time. ECMAScript 5.
+ */
+const array = ["121", "12", "1", "112", "111"];
+
+console.log(array.sort());
