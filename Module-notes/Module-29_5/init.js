@@ -1,10 +1,24 @@
-/* ১. Top Players2022 নাম একটা লেখা আছে। অথবা Top Blogs লেখা আছে। এই দুইটাকে দুইটা ID দাও। HTML চেইঞ্জ করে ID সেট করো। তারপর জাভাস্ক্রিপ্ট দিয়েই সেই এলিমেন্ট খুঁজে বের করে তার টেক্সট এর কালার চেইঞ্জ করে ফেলো। 
+const body = document.body;
+body.style.background = "#27496D";
 
+// task 1
 
+const playerSectionTitle = document.getElementById("player-section-title");
+playerSectionTitle.style.color = "#226597";
 
-২. জাভাস্ক্রিপ্ট দিয়ে player ক্লাস এর যতগুলা div আছে সবগুলাকে যেকোন একটা ব্যাকগ্রাউন্ড কালার দাও। তোমার ইচ্ছামতো যেকোন একটা ব্যাকগ্রাউন্ড কালার দিতে হবে। তবে কালারটা hex কালার না দিয়ে। rgba কালার দাও। যদি rgba বুঝতে না পারো। তাহলে গুগলে সার্চ দিয়ে একটা rgba কালার বের করে তারপর সেই কালার দাও।  
+const blogSectionTitle = document.getElementById("blog-section-title");
+blogSectionTitle.style.color = "#226597";
 
+const courseSectionTitle = document.getElementById("course-section-title");
+courseSectionTitle.style.color = "#226597";
 
+// task 2
+
+const players = document.querySelector("#player");
+players.style.background = "#27496D";
+players.style.color = "#fff";
+
+/*
 
 ৩. ওয়েবসাইট এর নিচে একটা ul list যোগ করো। সেখানে তোমার ইচ্ছামতো তিনটা আইটেম যোগ করো। তারপর ul এর নিচে একটা বাটন যোগ করো। এখন তোমার কাজ হবে। বাটনে যতবার ক্লিক করবে। ul এর মধ্যে নতুন একটা লিস্ট আইটেম যোগ হবে। 
 
