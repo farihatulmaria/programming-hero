@@ -111,3 +111,31 @@ class Support {
 const aamir = new Support("Aamir", "BD");
 console.log(aamir);
 aamir.startSession();
+
+class TeamMember {
+  name;
+  designiton = "Student Care Web Development";
+  address = "BD";
+}
+
+class StudentCare extends TeamMember {
+  constructor(name, address) {
+    this.name = name;
+    this.address = address;
+  }
+  StudentCareBuliding() {
+    console.log(this.name, " hi");
+  }
+}
+class NeptuneDev extends TeamMember {
+  constructor(name, address) {
+    this.name = name;
+    this.address = address;
+  }
+  relaseApp(verison) {
+    console.log(this.name, " relase App", verison);
+  }
+}
+
+const ami = StudentCare("Maria", "BD");
+console.log(ami);
