@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      #countires {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      img {
+        width: 500px;
+      }
+    </style>
+    <title>Kanye West</title>
+  </head>
+  <body>
+    <!-- printing strings in html by js api -->
+    <button onclick="loadQuote()">Fresh Kanye</button>
+    <blockquote id="quote"></blockquote>
+
+    <!-- random user id in html by js api -->
+    <button onclick="loadBuddies()">Display Buddies</button>
+    <blockquote id="buddies"></blockquote>
+
+    <!-- random countires in html by js api -->
+    <button onclick="loadCounties()">Random Countires</button>
+    <blockquote id="countires"></blockquote>
+
+    <script src="init.js"></script>
+  </body>
+</html>
