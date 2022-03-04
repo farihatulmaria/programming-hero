@@ -4,6 +4,9 @@ const loadPhotos = () => {
     .then((res) => res.json())
     .then((data) => displayPhotos(data));
 };
+const toggleSpinner = (displayStyles) => {
+  document.getElementById("spinner").style.display = displayStyles;
+};
 const displayPhotos = (photos) => {
   const rowContainer = document.querySelector(".row");
   photos.forEach((photo) => {
@@ -22,5 +25,6 @@ const displayPhotos = (photos) => {
       </div>
   </div>`;
     rowContainer.appendChild(div);
+    toggleSpinner("block");
   });
 };
