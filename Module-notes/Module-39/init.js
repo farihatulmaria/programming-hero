@@ -69,7 +69,3 @@ const owner = localStorage.getItem("owner");
 
 console.log(owner);
 // session storage
-
-const url = document.getElementById("anchor");
-const path = url.pathname;
-console.log(url);
