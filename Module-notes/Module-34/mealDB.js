@@ -1,5 +1,15 @@
+const searchField = document.getElementById("search-field");
+
+
+searchField.addEventListener("keypress",function(e){
+  if (event.keyCode == 13){
+   document.getElementById('button-search').click()
+  }else{
+    return;
+  }
+})
+
 const searchFood = async () => {
-  const searchField = document.getElementById("search-field");
   const searchText = searchField.value;
   // clear data
   searchField.value = "";
