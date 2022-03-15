@@ -1,2 +1,24 @@
 // Reacts 6 core concepts 
-/*  */
+
+// JSX ( Javascript XML )
+/*
+JSX allows us to write HTML in React. JSX makes it easier to write and add HTML in React.
+
+JSX =>
+    - allows us to wire HTML in React.
+    - makes it easier to write and add HTML in React
+    
+    - JSX helps us in keeping our code simpler and elegant when writing large pieces of code.
+
+    - most developer find it helpful as a visual aid when working with UI inside the JavaScript code
+
+    - JSX also allows React to show more useful error and warning messages.
+
+    - If programming language (XML) one is familiar with HTML, it is quite easy to use JSX when building React application
+
+    - Faster than normal JavaScript as it performs optimizations while translating to regular JavaScript.
+
+JSX conditions =>
+    - Adjacent JSx elements must be wrapped in an enclosing tag 
+*/
+
