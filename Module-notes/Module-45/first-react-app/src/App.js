@@ -14,8 +14,8 @@ const appLinkStyle = {
   textDecoration: 'none',
   fontWeight: 600
 }
-
 function App() {
+  const personName = ['jhon','Johnson','doe'];
   return (
     <div className="App">
       {/* <header className="App-header">
@@ -39,13 +39,27 @@ function App() {
           Learn React
         </a>
       </header> */}
-    <Person></Person>
+          <Person></Person> {/* called an function in React */}
+          <Person name ={personName[0]}  age ='20'></Person>{/* calling a dymatic function */}
+      {
+        personName.map(person => <li>Name : {person}</li>)
+      }
+      {
+        /* calling a function(Person) and add it to an array by mapping */
+        personName.map(person => <Person name ={person}></Person>)
+      }
     </div>
   );
 }
 
-function Person(){
-  return <h1>Farihatul Maria</h1>
+function Person(props) {
+
+  return (
+    <div className="person">
+      <h1>{props.name}</h1>
+      <p>Age: {props.age}</p>
+    </div>
+  );
 }
 
 export default App;

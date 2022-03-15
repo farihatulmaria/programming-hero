@@ -22,3 +22,21 @@ JSX conditions =>
     - Adjacent JSx elements must be wrapped in an enclosing tag 
 */
 
+/* Components:-
+
+Components are independent and reusable bits of code. They serve the same purpose as JavaScript functions, but work in isolation and return HTML. 
+We have to pass the data we want like an html code (nearly) but the react component will give us the data like a parameter.
+
+Ex:-
+
+function Person(props) {
+
+  return (
+    <div className="person">
+      <h1>{props.name}</h1>
+      <p>Age: {props.age}</p>
+    </div>
+  );
+}
+
+*/
