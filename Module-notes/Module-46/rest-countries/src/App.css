@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+.country-container {
+  text-align: left;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 0 50px;
+  gap: 30px;
+}
+.country-container div {
+  background-color: #113f67cc;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+}

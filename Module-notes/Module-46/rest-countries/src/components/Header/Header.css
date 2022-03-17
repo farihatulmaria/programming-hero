@@ -1,0 +1,29 @@
+header {
+  margin-bottom: 100px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #113f67;
+  color: #fff;
+  padding: 0 50px;
+}
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.main-menu li {
+  display: inline-block;
+  padding: 25px;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+.logo {
+  font-size: 20px;
+  font-weight: 600;
+}
