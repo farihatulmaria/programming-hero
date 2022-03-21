@@ -1,0 +1,33 @@
+.order-section {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  gap: 30px;
+  position: relative;
+}
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 45px;
+}
+.cart-container {
+  background: #ff99004d;
+  padding: 0 29px;
+  position: absolute;
+  right: -20px;
+  width: 15%;
+  top: -50px;
+  height: 101%;
+}
+.title {
+  text-align: center;
+  font-size: 35px;
+  line-height: 30px;
+  font-weight: 300;
+}
+.cart-container h4 {
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.005em;
+  color: #2a414f;
+}
