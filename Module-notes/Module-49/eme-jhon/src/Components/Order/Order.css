@@ -17,6 +17,7 @@
   width: 15%;
   top: -50px;
   height: 101%;
+  padding: 25px 0;
 }
 .title {
   text-align: center;
@@ -25,7 +26,7 @@
   font-weight: 300;
 }
 .cart-container h4 {
-  font-weight: 300;
+  font-weight: 500;
   font-size: 17px;
   line-height: 20px;
   letter-spacing: 0.005em;

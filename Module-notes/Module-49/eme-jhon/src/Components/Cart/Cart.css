@@ -1,0 +1,11 @@
+.title {
+  margin-bottom: 80px;
+}
+.cart {
+  padding: 20px 0;
+  position: sticky;
+  top: 0;
+}
+.total {
+  padding: 0 20px;
+}
