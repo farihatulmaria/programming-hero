@@ -1,0 +1,28 @@
+header {
+  background: #1c2b35;
+  padding: 20px 50px;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+}
+a {
+  text-decoration: none;
+}
+.main-menu {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.main-menu li {
+  display: inline-block;
+  padding: 0 20px;
+}
+.main-menu a {
+  color: #fff;
+  font-weight: 400;
+  text-transform: capitalize;
+  font-size: 20px;
+}
