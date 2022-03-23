@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+
+.banner {
+  padding: 6% 20px;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.banner h4 {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 20px;
+  color: #ff9900;
+}
+.banner h1 {
+  font-size: 60px;
+  color: #1c2b35;
+  margin-bottom: 0px;
+}
+.banner p {
+  font-size: 26px;
+  color: #2a414f;
+  line-height: 0;
+  margin-bottom: 80px;
+}
+.shop-btn {
+  border: none;
+  color: #fff;
+  background: #ff9900;
+  text-transform: uppercase;
+  padding: 13px 31px;
+  font-size: 20px;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+.banner-image {
+  position: relative;
+}
+
+.banner-image::after {
+  position: absolute;
+  top: 20px;
+  left: -20px;
+  background-color: #ffe0b3;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  z-index: -1;
+  content: "";
+}
