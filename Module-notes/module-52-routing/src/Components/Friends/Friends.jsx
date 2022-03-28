@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Friend from '../Friend/Friend';
 
 const Friends = () => {
     const [friends, setFriends] = useState([]);
@@ -12,7 +13,7 @@ const Friends = () => {
         <div>
             <h3>I have {friends.length} friends</h3>
             {
-                
+                friends.map(friend => <Friend key={friend.id} friend={friend}/>)
             }
         </div>
     );
