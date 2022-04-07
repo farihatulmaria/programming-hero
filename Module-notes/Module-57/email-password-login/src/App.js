@@ -37,19 +37,23 @@ function App() {
     <div className="registration">
       <Container className='my-5'>
         <h2 className='text-primary'>Register </h2>
-        <Form onSubmit={handleFormSubmit} className='my-5'>
+        <Form  onSubmit={handleFormSubmit} className='my-5'>
           <Form.Group className="mb-3" controlId="formBasicEmail">
 
             <Form.Label>Email address</Form.Label>
-            <Form.Control onBlur={handleEmailBlur} type="email" placeholder="Enter email" />
-
+            <Form.Control required onBlur={handleEmailBlur} type="email" placeholder="Enter email" />
+            <Form.Control.Feedback type="invalid">
+              Please input an email.
+            </Form.Control.Feedback>
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
 
             <Form.Label>Password</Form.Label>
-            <Form.Control onBlur={handlePasswordBlur} type="password" placeholder="Password" />
-            
+            <Form.Control required onBlur={handlePasswordBlur} type="password" placeholder="Password" />
+            <Form.Control.Feedback type="invalid">
+              Please enter a Password.
+            </Form.Control.Feedback>
           </Form.Group>
 
           <Button variant="primary" type="submit">
