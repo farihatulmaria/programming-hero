@@ -32,7 +32,7 @@
 span {
   color: #ff9900;
 }
-button {
+.delete-item button {
   background: #eb575759;
   font-size: 30px;
   border: 0;

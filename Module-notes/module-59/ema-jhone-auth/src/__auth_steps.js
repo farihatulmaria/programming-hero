@@ -10,7 +10,11 @@
     
     5. firebase settings > Authentication > enable providers
 
-    6. 
+    6. create login and sign up components
+
+    7. add route
+
+    8. npm install --save react-firebase-hooks
 
 
 */
