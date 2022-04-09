@@ -2,11 +2,12 @@ import { fab, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-import useFirebase from '../../hooks/useFirebase';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import auth from '../../firebase';
 import './Login.css';
 
 const Login = () => {
-    const {signInWithGoogle } = useFirebase();
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
     return (
         <div>
             <Container>
@@ -27,7 +28,7 @@ const Login = () => {
                     </Button>
                 </Form>
                 <div className='my-3'>
-                    <Button onClick={signInWithGoogle}><FontAwesomeIcon icon={fab, faGoogle} /></Button>
+                    <Button onClick={()=>signInWithGoogle()}><FontAwesomeIcon icon={fab, faGoogle} /></Button>
                 </div>
                 
             </Container>

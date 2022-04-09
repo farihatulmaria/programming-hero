@@ -1,9 +1,14 @@
 import React from 'react';
-import './Home.css'
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase';
+import './Home.css';
 const Home = () => {
-    return (
+    const [user] = useAuthState(auth); 
+     return (
         <div>
-            home
+            <h1 className='text-center'>
+                Hi there {user ? user?.displayName :''}
+            </h1>
         </div>
     );
 };
