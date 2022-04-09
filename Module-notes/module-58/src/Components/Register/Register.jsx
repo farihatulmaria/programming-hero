@@ -1,6 +1,7 @@
+import { fab, faGoogle } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
 import { Button, Container, Form } from 'react-bootstrap';
-
 const Register = () => {
     return (
         <div>
@@ -24,6 +25,10 @@ const Register = () => {
                         Submit
                     </Button>
                 </Form>
+                <div className='my-3
+                '>
+                    <Button><FontAwesomeIcon icon={fab, faGoogle} /></Button>
+                </div>
             </Container>
         </div>
     );

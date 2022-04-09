@@ -6,7 +6,7 @@ import useFirebase from '../../hooks/useFirebase';
 import './Login.css';
 
 const Login = () => {
-    const {signInWithGoogle} = useFirebase();
+    const {signInWithGoogle } = useFirebase();
     return (
         <div>
             <Container>
@@ -22,14 +22,13 @@ const Login = () => {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                    </Form.Group>
                     <Button variant="primary" type="submit">
                         Submit
                     </Button>
                 </Form>
-                <Button onClick={signInWithGoogle}><FontAwesomeIcon icon={fab, faGoogle} /></Button>
+                <div className='my-3'>
+                    <Button onClick={signInWithGoogle}><FontAwesomeIcon icon={fab, faGoogle} /></Button>
+                </div>
                 
             </Container>
         </div>
