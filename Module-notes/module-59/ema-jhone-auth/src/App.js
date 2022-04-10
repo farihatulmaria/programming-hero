@@ -10,7 +10,7 @@ import SignUp from './components/SignUp/SignUp';
 function App() {
   return (
     <>
-    <Header></Header>
+    <Header/>
       <Routes>
         <Route path='/' element={<Shop/>}></Route>
         <Route path='/home' element={<Shop/>}></Route>
