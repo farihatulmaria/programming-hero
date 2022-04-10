@@ -14,15 +14,17 @@ const Login = () => {
         user,
         error
       ] = useSignInWithEmailAndPassword(auth);
+    
+    let navigate = useNavigate();
+    const location = useLocation();
+    const from = (location.state?.form?.pathname || '/')
+    
     const emailBlur = (e) =>{
         setEmail(e.target.value)
     }
     const passWordBlur = (e) =>{
         setPassword(e.target.value)
     }
-
-    let navigate = useNavigate();
-    let location = useLocation();
     if(user){
         navigate('/')
     } else{
