@@ -19,9 +19,9 @@ function App() {
         <Route path="/home" element={<Home/>}/>
         <Route path="/home" element={<Home/>}/>
         <Route path="/service/:serviceId" element={<ServiceDetail/>}/>
+        <Route path="/about" element={<About/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/register" element={<Register/>}/>
-        <Route path="/about" element={<About/>}/>
         <Route path="*" element={<NotFound/>}/>
       </Routes>
     </main>

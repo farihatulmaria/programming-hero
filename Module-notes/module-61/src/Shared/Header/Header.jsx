@@ -9,13 +9,12 @@ const Header = () => {
             <Navbar fixed='top' bg='dark' variant="dark" expand="lg" className='mb-5'>
                 <Container>
                     <Navbar.Brand as={Link} to="/home">
-                        <img src={logo} alt="" />
+                        <img src={logo} style={{width:"80%"}} alt="" />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link href="/home">Home</Nav.Link>
-                        <Nav.Link href="/about">About</Nav.Link>
                         <Nav.Link href="home#services">Services</Nav.Link>
                         <Nav.Link href="home#experts">Experts</Nav.Link>
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
@@ -25,6 +24,10 @@ const Header = () => {
                         <NavDropdown.Divider />
                         <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
                         </NavDropdown>
+                    </Nav>
+                    <Nav className="ms-auto">
+                        <Nav.Link href="/about">About</Nav.Link>
+                        <Nav.Link href="/login">Login</Nav.Link>
                     </Nav>
                     </Navbar.Collapse>
                 </Container>

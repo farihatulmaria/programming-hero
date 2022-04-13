@@ -1,6 +1,6 @@
 import React, { useRef } from 'react';
 import { Button, Card, Container, Form } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const emailRef = useRef('');
@@ -47,7 +47,7 @@ const Login = () => {
                                 Submit
                             </Button>
                         </Form>
-                        <p>Don't Have An Account? <span onClick={navigateRegister}></span>Register Now</p>
+                        <p>Don't Have An Account? <Link to={'/register'} onClick={navigateRegister} className='pe-auto text-decoration-none'>Register Now</Link></p>
                    </Card.Body>
                </Card>
             </div>
