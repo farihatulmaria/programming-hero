@@ -29,7 +29,6 @@ const Login = () => {
         <div>
             <Container style={{minHeight:'70vh'}} className='d-flex align-items-center justify-content-center'>
                 <div style={{minWidth:'500px'}} >
-                    <SocialLogin/>
                     <Card className='p-2'>
                         <Card.Body>
                             <Card.Title>
@@ -62,6 +61,7 @@ const Login = () => {
                                 <p>Don't Have An Account? <Link to={'/register'} onClick={navigateRegister} className='pe-auto text-decoration-none'>Register Now</Link></p>
                         </Card.Body>
                     </Card>
+                    <SocialLogin/>
                 </div>
             </Container>
         </div>

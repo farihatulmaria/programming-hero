@@ -7,20 +7,23 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.social-login button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 50px;
+  border-radius: 5px;
 }
 .or {
   position: relative;
+  font-size: 20px;
 }
 .or::before,
 .or::after {
   position: absolute;
-  top: 0;
-  width: 20px;
+  top: 12px;
+  width: 40%;
   height: 2px;
-  background: #666;
+  background: #0d6efd;
   content: "";
 }
 .or::before {
