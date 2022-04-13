@@ -1,9 +1,11 @@
 import React, { useRef } from 'react';
 import { Button, Card, Container, Form } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase';
 import SocialLogin from '../SocialLogin/SocialLogin';
+
+
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
@@ -11,6 +13,8 @@ const Login = () => {
         signInWithEmailAndPassword,
         user,
       ] = useSignInWithEmailAndPassword(auth);
+
+      const [sendPasswordResetEmail, sending,] =useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
     if(user){
@@ -25,6 +29,11 @@ const Login = () => {
     const navigateRegister=()=>{
         navigate('/register')
     }    
+    const resetPassword = async () =>{
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+          alert('Sent email');
+    }
     return (
         <div>
             <Container style={{minHeight:'70vh'}} className='d-flex align-items-center justify-content-center'>
@@ -55,10 +64,12 @@ const Login = () => {
                                     </Form.Group>
 
                                     <Button variant="primary" type="submit">
-                                        Submit
+                                        Login
                                     </Button>
                                 </Form>
                                 <p>Don't Have An Account? <Link to={'/register'} onClick={navigateRegister} className='pe-auto text-decoration-none'>Register Now</Link></p>
+
+                                <p>Forgot Your Password? <Link to={'/register'} onClick={resetPassword} className='pe-auto text-decoration-none'>Reset Password</Link></p>
                         </Card.Body>
                     </Card>
                     <SocialLogin/>
