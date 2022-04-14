@@ -3,23 +3,27 @@ import { Button } from "react-bootstrap";
 import {
   useSignInWithFacebook,
   useSignInWithGithub,
-  useSignInWithGoogle,
+  useSignInWithGoogle
 } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import auth from "../../firebase";
 import facebook from "../../images/social/facebook.png";
 import github from "../../images/social/github.png";
 import google from "../../images/social/google.png";
+import Loading from "../../Shared/Loading/Loading";
 
 const SocialLogin = () => {
     
-  const [signInWithGoogle, user] = useSignInWithGoogle(auth);
-  const [signInWithGithub, user1] = useSignInWithGithub(auth);
-  const [signInWithFacebook, user2] = useSignInWithFacebook(auth);
+  const [signInWithGoogle, user,loading] = useSignInWithGoogle(auth);
+  const [signInWithGithub, user1,loading1] = useSignInWithGithub(auth);
+  const [signInWithFacebook, user2,loading2] = useSignInWithFacebook(auth);
 
   const navigate = useNavigate();
   if (user || user1 || user2) {
     navigate("/");
+  }
+  if (loading || loading1 || loading2) {
+    return <Loading/>
   }
   return (
     <div className="social-login">

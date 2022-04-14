@@ -2,21 +2,25 @@ import React, { useRef } from 'react';
 import { Button, Card, Container, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase';
+import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
-
 
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const [
         signInWithEmailAndPassword,
-        user,
+        user,loading
       ] = useSignInWithEmailAndPassword(auth);
 
       const [sendPasswordResetEmail, sending,] =useSendPasswordResetEmail(auth);
 
     const navigate = useNavigate();
+    if(loading || sending){
+        return <Loading/>
+    }
     if(user){
         navigate('/');
     }
@@ -31,13 +35,17 @@ const Login = () => {
     }    
     const resetPassword = async () =>{
         const email = emailRef.current.value;
-        await sendPasswordResetEmail(email);
-          alert('Sent email');
+        if(email){
+            await sendPasswordResetEmail(email);
+            toast.success('Sent email');
+        }else{
+            toast.warning('Please Enter Your Email Address');
+        }
     }
     return (
         <div>
             <Container style={{minHeight:'70vh'}} className='d-flex align-items-center justify-content-center'>
-                <div style={{minWidth:'500px'}} >
+                <div style={{minWidth:'400px'}} >
                     <Card className='p-2'>
                         <Card.Body>
                             <Card.Title>
@@ -69,10 +77,11 @@ const Login = () => {
                                 </Form>
                                 <p>Don't Have An Account? <Link to={'/register'} onClick={navigateRegister} className='pe-auto text-decoration-none'>Register Now</Link></p>
 
-                                <p>Forgot Your Password? <Link to={'/register'} onClick={resetPassword} className='pe-auto text-decoration-none'>Reset Password</Link></p>
+                                <p>Forgot Your Password? <Link to={'/login'} onClick={resetPassword} className='pe-auto text-decoration-none'>Reset Password</Link></p>
                         </Card.Body>
                     </Card>
                     <SocialLogin/>
+                    <ToastContainer/>
                 </div>
             </Container>
         </div>

@@ -1,14 +1,20 @@
 import React from 'react';
+import { Container } from 'react-bootstrap';
+
 const Footer = () => {
+
     const dateTime = () =>{
         let currentDate = new Date();
-        let displayDate = currentDate.getDate() + '/' + currentDate.getMonth() + '/' + currentDate.getFullYear();
+        let displayDate = currentDate.getFullYear();
         
         return displayDate;
     }
+
     return (
-        <footer>
-            <p>copyright © demo-company {dateTime()}</p>
+        <footer className='bg-dark w-100'>
+            <Container className='text-center text-white py-4'>
+                <p>copyright © demo-company {dateTime()}</p>
+            </Container>
         </footer>
     );
 };
