@@ -30,15 +30,11 @@ Node. js is easily employed as a server-side proxy where it can handle a large a
 
 
 
-
 Express js - Fast, unopinionated, minimalist web framework for Node.js
 
 
-
-
-
-
-
+ mkdir myApp
+ ^^^^ - Make directore
 
 
 
