@@ -15,9 +15,9 @@
 5. Network Access > ip address : allow all
 6. DataBAse > Connect > copied the given code
 
----------------------------
-    CRUD Operation
----------------------------
+---------------------
+   CRUD Operation
+---------------------
 
 7. Node mongodb CRUD > Fundamentals
 8. Create async run function
@@ -32,9 +32,9 @@
 12. Client side : set fetch with POST ,headers, body
 13. Make sure to return a json file from the POST api
 
-----------------------------------------------
-        Load Data to the Client Side
-----------------------------------------------
+-------------------------------------
+    Load Data to the Client Side
+-------------------------------------
 
 14. Create get api
 15. Create a query object
@@ -44,7 +44,7 @@
 
 19. Client side display users
 -------------------
-        Remove User
+    Remove User
 -------------------
 
 
