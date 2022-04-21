@@ -37,16 +37,11 @@ Express js - Fast, unopinionated, minimalist web framework for Node.js
  ^^^^ - Make directore
 
 
+Middleware:-
 
-
-
-
-
-
-
-
-
-
+- Has the access to  the request object
+- Responses object
+- Can process the server sends a response
 
 
 
