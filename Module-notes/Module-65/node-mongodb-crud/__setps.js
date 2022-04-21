@@ -27,8 +27,8 @@
 -------------------------------------------
 
 9.  Client Side : create a form
-10. get clients's data 
-11. create user's post to received data from the Client Side  
+10. Get clients's data 
+11. Create user's post to received data from the Client Side  
 12. Client side : set fetch with POST ,headers, body
 13. Make sure to return a json file from the POST api
 
@@ -36,16 +36,16 @@
         Load Data to the Client Side
 ----------------------------------------------
 
-14. create get api
-15. create a query object
-16. find from user Collection - collection.find(query)
-17. cursor.toArray()
-18. return the result
+14. Create get api
+15. Create a query object
+16. Find from user Collection - collection.find(query)
+17. Cursor.toArray()
+18. Return the result
 
-
-
-
-
+19. Client side display users
+-------------------
+        Remove User
+-------------------
 
 
 
