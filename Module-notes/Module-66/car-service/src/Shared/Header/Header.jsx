@@ -31,6 +31,13 @@ const Header = () => {
                     </Nav>
                     <Nav className="ms-auto">
                         <Nav.Link href="/about">About</Nav.Link>
+                        {
+                            user && <>
+                                <Nav.Link href="/add-service">Add Services</Nav.Link>
+                                <Nav.Link href="/manage-service">Manage Services</Nav.Link>
+                            </>
+                        }
+
                        { user ? <Button onClick={()=>signOut(auth)}>Sign Out</Button> : <Nav.Link href="/login">Login</Nav.Link>}
                     </Nav>
                     </Navbar.Collapse>
