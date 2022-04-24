@@ -19,16 +19,16 @@ async function run(){
 
         // loading all of the services on the client side
 
-        app.get('/service', async (req,res) => {
+        app.get('/services', async (req,res) => {
             const query = {};
             const cursor = serviceCollection.find(query);
             const services = await cursor.toArray();
-            res.send(services || 'no')
+            res.send(services)
         })
 
         // loading a service on the server side
 
-        app.get('/service/:id' , async (req,res)=>{
+        app.get('/services/:id' , async (req,res)=>{
             const id = req.params.id;
             const query = {_id: ObjectId(id)}
             const service = await serviceCollection.findOne(query)
@@ -37,23 +37,21 @@ async function run(){
 
         // adding a service from the client side to DataBase
 
-        app.post('/service' , async (req,res)=>{
+        app.post('/services' , async (req,res)=>{
             const newService = req.body;
             const result = await serviceCollection.insertOne(newService)
             res.send(result)
         })
 
-        app.delete('/service/:id' ,async (req,res)=>{
+        app.delete('/services/:id' ,async (req,res)=>{
             const id = req.params.id;
             const query = {_id:ObjectId(id)}
             const result = await serviceCollection.deleteOne(query)
             res.send(result) 
         })
 
-    } finally {
-        
+    } finally { 
     }
-
 }
 run().catch(console.dir)
 
