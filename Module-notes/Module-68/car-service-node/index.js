@@ -17,7 +17,8 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 async function run(){
     try {
         await client.connect();
-        const serviceCollection = client.db('CarService').collection('service')
+        const serviceCollection = client.db('CarService').collection('service');
+        const orderCollection = client.db('CarService').collection('order')
 
         // loading all of the services on the client side
 
@@ -50,6 +51,13 @@ async function run(){
             const query = {_id:ObjectId(id)}
             const result = await serviceCollection.deleteOne(query)
             res.send(result) 
+        })
+        // order
+
+        app.post('/order',async (req,res)=>{
+            const newOrder = req.body;
+            const result = await orderCollection.insertOne(newOrder);
+            res.send(result);
         })
 
     } finally { 
