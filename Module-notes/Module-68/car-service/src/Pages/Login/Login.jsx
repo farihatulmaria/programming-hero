@@ -1,8 +1,9 @@
+import axios from 'axios';
 import React, { useRef } from 'react';
 import { Button, Card, Container, Form } from 'react-bootstrap';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import auth from '../../firebase';
 import Loading from '../../Shared/Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -24,11 +25,14 @@ const Login = () => {
     if(user){
         navigate('/');
     }
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault();
         const email = emailRef.current.value;
         const password = passwordRef.current.value;
-        signInWithEmailAndPassword(email,password)
+        await signInWithEmailAndPassword(email,password);
+        
+        const {data} = await axios.post('http://localhost:5000/login', {email})
+        localStorage.setItem('accessToken' , data.accessToken)
     }
     const navigateRegister=()=>{
         navigate('/register')
@@ -81,7 +85,6 @@ const Login = () => {
                         </Card.Body>
                     </Card>
                     <SocialLogin/>
-                    <ToastContainer/>
                 </div>
             </Container>
         </div>

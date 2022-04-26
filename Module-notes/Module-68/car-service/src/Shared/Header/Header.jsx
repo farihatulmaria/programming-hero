@@ -1,6 +1,6 @@
 import { signOut } from 'firebase/auth';
 import React from 'react';
-import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { Button, Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase';
@@ -21,13 +21,6 @@ const Header = () => {
                         <Nav.Link href="/home">Home</Nav.Link>
                         <Nav.Link href="home#services">Services</Nav.Link>
                         <Nav.Link href="home#experts">Experts</Nav.Link>
-                        <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                        <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                        <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-                        <NavDropdown.Divider />
-                        <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-                        </NavDropdown>
                     </Nav>
                     <Nav className="ms-auto">
                         <Nav.Link href="/about">About</Nav.Link>
@@ -35,6 +28,7 @@ const Header = () => {
                             user && <>
                                 <Nav.Link href="/add-service">Add Services</Nav.Link>
                                 <Nav.Link href="/manage-service">Manage Services</Nav.Link>
+                                <Nav.Link href="/order">Order</Nav.Link>
                             </>
                         }
 

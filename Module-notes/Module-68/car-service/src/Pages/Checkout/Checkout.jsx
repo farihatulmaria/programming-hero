@@ -3,6 +3,7 @@ import React from 'react';
 import { Button, Card, Container, FloatingLabel, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase';
 import useServiceDetail from '../../hooks/useServiceDetail';
 const Checkout = () => {
@@ -20,8 +21,14 @@ const Checkout = () => {
             address: e.target.address.value,
             phone : e.target.phone.value,
         }
-        axios.post('',order)
-        .then(res=> res.data )
+        axios.post('http://localhost:5000/order',order)
+        .then(res=> {
+            const {data} = res;
+            if(data.insertedId){
+                toast.success('Your order is booked ');
+                e.target.reset();
+            }
+        })
     }
     return (
         <div className='check-out'>
