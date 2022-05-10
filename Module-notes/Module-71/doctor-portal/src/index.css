@@ -14,3 +14,6 @@ button {
 .title {
   @apply text-secondary uppercase font-bold my-1;
 }
+input {
+  display: block;
+}

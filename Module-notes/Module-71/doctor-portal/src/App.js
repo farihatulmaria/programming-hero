@@ -5,15 +5,15 @@ import About from './Pages/About/About';
 import Home from './Pages/Home/Home';
 function App() {
   return (
-    <>
-    <Header/>
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/home' element={<Home/>}/>
-      <Route path='/about' element={<About/>}/>
-    </Routes>
-    <Footer/>
-    </>
+    <div className='max-w-7xl mx-auto'>
+      <Header/>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/home' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+      </Routes>
+      <Footer/>
+    </div>
   );
 }
 
