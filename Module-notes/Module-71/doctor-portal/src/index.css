@@ -8,19 +8,9 @@ button {
 button {
   color: white !important;
 }
-.info {
-  @apply bg-gradient-to-r border-0 from-secondary to-primary text-white;
+.info-bg {
+  @apply bg-gradient-to-r from-secondary to-primary;
 }
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.title {
+  @apply text-secondary uppercase font-bold my-1;
 }
