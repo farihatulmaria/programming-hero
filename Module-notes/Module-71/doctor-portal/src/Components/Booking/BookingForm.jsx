@@ -43,9 +43,6 @@ const BookingForm = ({treatment,Date,setTreatment}) => {
                         <input type="email" name='email' placeholder="Email" required/>
                         <button className="btn-block" type='submit'>Submit</button>
                     </form>
-                    <div className="modal-action">
-                        <label htmlFor="booking-modal" className="btn">Yay!</label>
-                    </div>
                 </div>
             </div>
         </div>

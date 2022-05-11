@@ -29,7 +29,8 @@ input {
 .rdp-button svg {
   @apply text-black;
 }
-.rdp-day {
+.rdp-day,
+.rdp-button {
   @apply !text-black rounded-none hover:!border-0 focus:!border-0;
 }
 .rdp-day_selected {
