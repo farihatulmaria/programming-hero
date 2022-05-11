@@ -15,7 +15,7 @@ const Booking = ({selectedDate}) => {
             <h6 className="title py-10">Available Appointments on {format(selectedDate, 'PP')}</h6>
             <div className="appointments grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
                 {
-                    appointments.map(appointment => <Offer key={appointment._id} appointment={appointment}/>)
+                    appointments.map(appointment => <Offer Date={selectedDate} key={appointment._id} appointment={appointment}/>)
                 }
             </div>
         </div>

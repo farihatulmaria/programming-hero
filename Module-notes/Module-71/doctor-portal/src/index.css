@@ -9,20 +9,22 @@ button,
 button {
   color: white !important;
 }
-.info-bg {
-  @apply bg-gradient-to-r from-secondary to-primary;
-}
+
 .title {
   @apply text-secondary uppercase font-bold my-1 text-center;
 }
-
 .menu a:active {
   @apply !bg-accent !text-white;
+}
+
+.info-bg {
+  @apply bg-gradient-to-r from-secondary to-primary;
 }
 
 input {
   display: block;
 }
+
 .rdp-button svg {
   @apply text-black;
 }
