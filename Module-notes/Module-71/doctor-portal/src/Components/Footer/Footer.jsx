@@ -8,21 +8,21 @@ const Footer = () => {
         }} className="p-10 ">
             <div className='footer'>
                 <div className='p-5'>
-                    <span className="footer-title text-2xl">Services</span> 
+                    <span className="footer-title text-xl">Services</span> 
                     <a href='/' className="link link-hover">Branding</a>
                     <a href='/' className="link link-hover">Design</a>
                     <a href='/' className="link link-hover">Marketing</a>
                     <a href='/' className="link link-hover">Advertisement</a>
                 </div> 
                 <div className='p-5'>
-                    <span className="footer-title text-2xl">Company</span> 
+                    <span className="footer-title text-xl">Company</span> 
                     <a href='/' className="link link-hover">About us</a>
                     <a href='/' className="link link-hover">Contact</a>
                     <a href='/' className="link link-hover">Jobs</a>
                     <a href='/' className="link link-hover">Press kit</a>
                 </div> 
                 <div className='p-5'>
-                    <span className="footer-title text-2xl">Legal</span> 
+                    <span className="footer-title text-xl">Legal</span> 
                     <a href='/' className="link link-hover">Terms of use</a>
                     <a href='/' className="link link-hover">Privacy policy</a>
                     <a href='/' className="link link-hover">Cookie policy</a>

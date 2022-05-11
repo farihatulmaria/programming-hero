@@ -12,8 +12,22 @@ button {
   @apply bg-gradient-to-r from-secondary to-primary;
 }
 .title {
-  @apply text-secondary uppercase font-bold my-1;
+  @apply text-secondary uppercase font-bold my-1 text-center;
 }
+
+.menu a:active {
+  @apply !bg-accent !text-white;
+}
+
 input {
   display: block;
+}
+.rdp-button svg {
+  @apply text-black;
+}
+.rdp-day {
+  @apply !text-black rounded-none hover:!border-0 focus:!border-0;
+}
+.rdp-day_selected {
+  @apply !bg-primary !text-white;
 }

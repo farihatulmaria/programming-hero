@@ -1,8 +1,11 @@
 import React from 'react';
+import AppointmentBannerImage from '../../assets/images/bg.png';
 import BannerImage from '../../assets/images/chair.png';
 const Banner = () => {
     return (
-        <div className="hero h-[800px]">
+        <div className="hero h-[800px]" style={{
+            background: `url(${AppointmentBannerImage})`
+        }}>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <img src={BannerImage} className="max-w-lg my-5 rounded-lg shadow-2xl" alt=''/>
                 <div>
