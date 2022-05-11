@@ -3,7 +3,7 @@ import AppointmentBannerImage from '../../assets/images/bg.png';
 import BannerImage from '../../assets/images/chair.png';
 const Banner = () => {
     return (
-        <div className="hero h-[800px]" style={{
+        <div className="hero h-[700px]" style={{
             background: `url(${AppointmentBannerImage})`
         }}>
             <div className="hero-content flex-col lg:flex-row-reverse">

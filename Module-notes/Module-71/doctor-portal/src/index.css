@@ -3,6 +3,7 @@
 @tailwind utilities;
 
 button,
+button[type="submit"],
 .modal-button {
   @apply bg-gradient-to-r border-0 from-secondary to-primary btn text-white;
 }
@@ -33,4 +34,7 @@ input {
 }
 .rdp-day_selected {
   @apply !bg-primary !text-white;
+}
+.booking input {
+  @apply input input-bordered input-primary w-full max-w-lg;
 }
