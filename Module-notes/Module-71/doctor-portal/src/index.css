@@ -2,7 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-button {
+button,
+.modal-button {
   @apply bg-gradient-to-r border-0 from-secondary to-primary btn text-white;
 }
 button {

@@ -4,6 +4,7 @@ import Booking from '../../Components/Booking/Booking';
 
 const Appointment = () => {
   const [selectedDate, setSelected] = useState(new Date());
+  
     return (
         <div>
             <AppointmentBanner selectedDate={selectedDate} setSelected={setSelected}/>

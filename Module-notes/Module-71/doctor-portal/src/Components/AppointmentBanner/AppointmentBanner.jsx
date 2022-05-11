@@ -4,6 +4,7 @@ import AppointmentBannerImage from '../../assets/images/bg.png';
 import BannerImg from '../../assets/images/chair.png';
 
 const AppointmentBanner = ({selectedDate,setSelected}) => {
+    
     return (
         <div className="hero h-[800px]" style={{
             background: `url(${AppointmentBannerImage})`
