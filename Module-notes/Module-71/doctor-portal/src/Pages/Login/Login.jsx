@@ -1,9 +1,11 @@
 import React from 'react';
-/* import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import auth from '../../firebase'; */
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
+import auth from '../../firebase.js';
+
+
 const Login = () => {
-    // const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     return (
         <div className='login'>
            <div className="flexible h-[700px]">
