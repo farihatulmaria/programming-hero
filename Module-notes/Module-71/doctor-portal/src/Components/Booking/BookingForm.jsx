@@ -35,8 +35,6 @@ const BookingForm = ({treatment,Date,setTreatment}) => {
                             {
                                 slots.map(slot=> <option>{slot}</option>)
                             }
-                            
-                            
                         </select>
                         <input type="text" name='name' placeholder="Full Name" required/>
                         <input type="tel" name='phone' placeholder="Phone Number" required/>

@@ -10,7 +10,9 @@ button[type="submit"],
 button {
   color: white !important;
 }
-
+.btn-outlined {
+  @apply border bg-none btn-outline !text-black hover:bg-accent hover:!text-white;
+}
 .title {
   @apply text-secondary uppercase font-bold my-1 text-center;
 }
@@ -36,6 +38,10 @@ input {
 .rdp-day_selected {
   @apply !bg-primary !text-white;
 }
-.booking input {
+input {
   @apply input input-bordered input-primary w-full max-w-lg;
+}
+
+.flexible {
+  @apply flex justify-center items-center;
 }

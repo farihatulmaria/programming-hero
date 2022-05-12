@@ -7,9 +7,9 @@ const Contact = () => {
                 <h6 className="title">Contact Us</h6>
                 <h3 className='font-light text-3xl my-6 text-white'>Stay connected with us</h3>
                 <div className='space-y-4'>
-                    <input type="email" placeholder="Email Address" className="input input-bordered w-full max-w-xs" />
-                    <input type="text" placeholder="Subject" className="input input-bordered w-full max-w-xs" />
-                    <textarea type="text" placeholder="Your message" className='textarea w-full max-w-xs -ml-2' />
+                    <input type="email" placeholder="Email Address"  />
+                    <input type="text" placeholder="Subject"  />
+                    <textarea type="text" placeholder="Your message" className='textarea w-full textarea-primary max-w-md -ml-1' />
                     <button>submit</button>
                 </div>
             </div>
