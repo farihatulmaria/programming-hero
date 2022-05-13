@@ -13,7 +13,7 @@ const Header = () => {
         <li><Link to='/reviews'>Reviews</Link></li>
         <li><Link to='/contact'>Contact Us</Link></li>
         {
-            user?.uid ?<li><button onClick={()=> signOut(auth)}>Sign Out</button></li>:<li><Link to='/login'>Login</Link></li>
+            user?.uid ?<li><button className='mt-3 lg:mt-0' onClick={()=> signOut(auth)}>Sign Out</button></li>:<li><Link to='/login'>Login</Link></li>
         }
     </>
     return (
@@ -30,7 +30,7 @@ const Header = () => {
                 <a href='/' className="btn btn-ghost normal-case text-xl">Doctors Portal</a>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <ul className="menu menu-horizontal p-0">
+                <ul className="menu menu-horizontal p-0 space-x-2">
                     {menuItems}
                 </ul>
             </div>

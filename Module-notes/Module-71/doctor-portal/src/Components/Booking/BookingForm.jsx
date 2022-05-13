@@ -1,6 +1,9 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase';
 
 const BookingForm = ({treatment,Date,setTreatment}) => {
+    const [user] = useAuthState(auth);
     const {name,slots}= treatment;
     const handleBooking =(e)=>{
         e.preventDefault();
@@ -29,9 +32,9 @@ const BookingForm = ({treatment,Date,setTreatment}) => {
                                 slots.map(slot=> <option>{slot}</option>)
                             }
                         </select>
-                        <input type="text" name='name' placeholder="Full Name" required/>
+                        <input type="text" name='name' className="!bg-slate-200" value={user?.displayName} placeholder="Full Name" required/>
+                        <input type="email" name='email' value={user?.email} placeholder="Email" className="!bg-slate-200" readOnly/>
                         <input type="tel" name='phone' placeholder="Phone Number" required/>
-                        <input type="email" name='email' placeholder="Email" required/>
                         <button className="btn-block" type='submit'>Submit</button>
                     </form>
                 </div>
