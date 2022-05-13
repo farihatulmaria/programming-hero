@@ -1,5 +1,7 @@
 import 'react-day-picker/dist/style.css';
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Contact from './Components/Contact/Contact';
 import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
@@ -26,6 +28,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/sign-up' element={<SignUp/>}/>
       </Routes>
+      <ToastContainer />
       <Footer/>
     </div>
   );

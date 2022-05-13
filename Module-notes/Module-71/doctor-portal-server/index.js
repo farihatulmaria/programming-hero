@@ -12,13 +12,13 @@ app.use(express.json());
 
 
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.n5c9c.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
-console.log(uri);
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
 
 async function run(){
     try{
         await client.connect();
         const servicesCollection = client.db("doctor-portal").collection("services");
+        const bookingCollection = client.db("doctor-portal").collection("booking");
 
         app.get('/services', async (req,res)=>{
             const query = {};
@@ -26,6 +26,35 @@ async function run(){
             const services = await cursor.toArray();
             res.send(services);
         })
+        app.post('/booking', async (req,res)=>{
+            const booking = req.body.booking;
+            const result = await bookingCollection.insertOne(booking);
+            res.send(result);
+        })
+        app.get('/booking', async (req,res)=>{
+            const query = {};
+            const cursor = bookingCollection.find(query);
+            const bookings = await cursor.toArray();
+            res.send(bookings);
+        })
+         /* 
+            API naming convention
+
+            - app.get('/booking') - get all booking in this way
+
+            - app.get('/booking/:id') - getting a specific booking 
+
+            - app.post('/booking') - adding a new booking
+
+            - app.put('/booking/:id') - updating a specific booking
+
+            OR,
+
+            - app.put('/booking/:id') - updating a specific booking
+
+
+            - app.delete('/booking/:id') - deleting a booking
+         */
 
     }finally{
         

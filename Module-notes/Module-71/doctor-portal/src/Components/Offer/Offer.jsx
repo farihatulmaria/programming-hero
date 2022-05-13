@@ -10,7 +10,12 @@ const Offer = ({appointment,setTreatment}) => {
                 <p className='text-sm'>{slots.length} {slots.length > 1 ? 'SPACES':'SPACE'} AVAILABLE</p>
 
                 <div className="card-actions justify-center">
-                    <label htmlFor='booking-modal' className="my-3 modal-button" disabled={slots.length===0} onClick={()=>setTreatment(appointment)}>Book Appointment</label>
+                    <label
+                        htmlFor="booking-modal"
+                        disabled={slots.length === 0}
+                        onClick={() => setTreatment(appointment)}
+                        className="my-3 modal-button" 
+                    >Book Appointment</label>
                 </div>
             </div>
         </div>
