@@ -3,9 +3,11 @@ import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.js';
 
-
 const Login = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    if(user){
+        console.log(user);
+    }
     return (
         <div className='login'>
            <div className="flexible h-[700px]">
@@ -28,7 +30,7 @@ const Login = () => {
                             <button>Login</button>
                             <p className='text-sm text-center'>New to Doctors Portal? <Link className='!text-primary' to="/sign-up">Create new account</Link></p>
                             <div className="divider">OR</div>
-                            <button className='btn-outlined'>Continue with Google</button>
+                            <button className='btn-outlined' onClick={()=>signInWithGoogle()}>Continue with Google</button>
                         </div>
                 </div>
            </div>
