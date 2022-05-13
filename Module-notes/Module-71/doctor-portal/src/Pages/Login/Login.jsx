@@ -5,16 +5,16 @@ import { Link, useNavigate } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading';
 import auth from '../../firebase.js';
 const Login = () => {
-    const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    const [signInWithGoogle, googleUser, loading, error] = useSignInWithGoogle(auth);
     const [
         signInWithEmailAndPassword,
-        user2,
+        emailUser,
         loading2,
         error2,
       ] = useSignInWithEmailAndPassword(auth);
 
     const { register, handleSubmit } = useForm();
-    const handleLoginWithEmailAndPass = data => {
+    const handleLoginWithEmailAndPass = (data) => {
         const email = data.email;
         const passWord = data.password;
         if(email && passWord){
@@ -23,11 +23,11 @@ const Login = () => {
     }
 
     const navigate = useNavigate();
-    
+
     if(loading || loading2){
         return <Loading/>
     }
-    if(user || user2){
+    if(googleUser || emailUser){
         navigate('/');
     }
     return (
@@ -46,7 +46,7 @@ const Login = () => {
                                             value:true,
                                             message:'Please type your email'
                                         },
-                                        pattern: /^\S+@\S+$/i
+                                        pattern: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/
                                         })} />
                                 </div>
                                 <div className="form-control">
@@ -61,7 +61,7 @@ const Login = () => {
                             </form>
                             
                             <p className='text-sm text-center'>New to Doctors Portal? <Link className='!text-primary' to="/sign-up">Create new account</Link></p>
-                            <p className="text-red-600">{error || error2}</p>
+                            <p className="text-red-600 text-center">{error?.message||error2?.message}</p>
                             <div className="divider">OR</div>
                             <button className='btn-outlined' onClick={()=>signInWithGoogle()}>Continue with Google</button>
                         </div>
