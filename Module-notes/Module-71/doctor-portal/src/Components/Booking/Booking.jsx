@@ -11,6 +11,7 @@ const Booking = ({selectedDate}) => {
         .then(res => res.json())
         .then(data => setAppointments(data))
     }, [])
+    
     return (
         <div className='booking px-5 my-20'>
             <h6 className="title py-10">Available Appointments on {format(selectedDate, 'PP')}</h6>

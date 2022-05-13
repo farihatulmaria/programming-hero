@@ -3,7 +3,7 @@ import React from 'react';
 const Offer = ({appointment,setTreatment}) => {
     const {name,slots}= appointment;
     return (
-        <div className="card py-5 bg-base-100 shadow-xl">
+        <div className="card py-5 bg-base-100 shadow-xl w-50">
             <div className="card-body text-center">
                 <h2 className="title">{name}</h2>
                 <p>{slots.length > 0 ? slots[0] : "Try it on another day"}</p>

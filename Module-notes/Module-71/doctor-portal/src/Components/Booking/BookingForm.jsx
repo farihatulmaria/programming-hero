@@ -9,14 +9,7 @@ const BookingForm = ({treatment,Date,setTreatment}) => {
         const patientName =  e.target.name.value;
         const phone =  e.target.phone.value;
         const email =  e.target.email.value;
-        const info ={
-            date:date,
-            time:time,
-            name:patientName,
-            service:name,
-            phone:phone,
-            email:email
-        }
+        const info ={date,time,patientName,name,phone, email}
         console.log(info);
         setTreatment(null)
     }

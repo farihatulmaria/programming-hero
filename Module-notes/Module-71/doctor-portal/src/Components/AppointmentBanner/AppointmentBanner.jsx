@@ -10,10 +10,10 @@ const AppointmentBanner = ({selectedDate,setSelected}) => {
             background: `url(${AppointmentBannerImage})`
         }}>
             <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={BannerImg} className="max-w-lg my-5 rounded-lg shadow-2xl" alt='' />
-                <div className="px-10">
+                <img src={BannerImg} className="max-w-xs md:max-w-md lg:max-w-lg my-5 rounded-lg shadow-2xl" alt='' />
+                <div className="px-0 lg:px-10">
                     <div className="card bg-base-100 shadow-xl">
-                        <div className="card-body">
+                        <div className="card-body text-center">
                              <DayPicker
                                 mode="single"
                                 selected={selectedDate}
