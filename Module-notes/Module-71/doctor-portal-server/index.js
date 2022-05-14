@@ -26,16 +26,16 @@ async function run(){
             const services = await cursor.toArray();
             res.send(services);
         })
-        app.post('/booking', async (req,res)=>{
-            const booking = req.body.booking;
+        app.post('/booking',async(req,res)=>{
+            const booking = req.body.body;
             const result = await bookingCollection.insertOne(booking);
-            res.send(result);
+            res.send(result)
         })
-        app.get('/booking', async (req,res)=>{
-            const query = {};
-            const cursor = bookingCollection.find(query);
+        app.get('/booking',async(req,res)=>{
+            const query = {}
+            const cursor= bookingCollection.find(query);
             const bookings = await cursor.toArray();
-            res.send(bookings);
+            res.send(bookings)
         })
          /* 
             API naming convention

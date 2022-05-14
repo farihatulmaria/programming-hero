@@ -13,11 +13,11 @@ const BookingForm = ({treatment,Date,setTreatment}) => {
         const slot = event.slot.value;
         const date =  formattedDate;
         const time =  event.slot.value;
-        const patientName =  user.displayName;
+        const patient =  user.displayName;
         const phone =  event.phone.value;
         const email =  user.email;
         const booking ={
-            patientName,
+            patient,
             email,
             phone, 
             date,
