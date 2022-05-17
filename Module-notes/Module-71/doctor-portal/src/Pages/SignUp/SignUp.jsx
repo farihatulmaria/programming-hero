@@ -1,11 +1,12 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../../Components/Loading/Loading';
 import auth from '../../firebase.js';
-
+import useToken from '../../hooks/useToken';
 const SignUp = () => {
+    const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [
         createUserWithEmailAndPassword,
         user,
@@ -13,10 +14,13 @@ const SignUp = () => {
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
 
-      const [updateProfile, updating ,updatingError] = useUpdateProfile(auth);
+    const [updateProfile, updating ,updatingError] = useUpdateProfile(auth);
+
+    const [token] = useToken(user||googleUser);
+
     const { register, handleSubmit } = useForm();
     const handleLoginWithEmailAndPass = async (data) => {
-        const name = data.name
+        const name = data.name;
         const email = data.email;
         const passWord = data.password;
         if(email && passWord){
@@ -29,11 +33,11 @@ const SignUp = () => {
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
     
-    if(loading || updating){
+    if(loading || updating || googleLoading){
         return <Loading/>
     }
-    if(user){
-        navigate(from);
+    if(token){
+        navigate('/');
     }
     return (
         <div className='SignUp'>
@@ -76,7 +80,7 @@ const SignUp = () => {
                             <p className='text-sm text-center'>Already have an account?<Link className='!text-primary' to="/login">Login now</Link></p>
                             <p className="text-red-600 text-center">{error?.message ||updatingError?.message}</p>
                             <div className="divider">OR</div>
-                            <button className='btn-outlined'>Continue with Google</button>
+                            <button className='btn-outlined' onClick={()=>signInWithGoogle()}>Continue with Google</button>
                         </div>
                 </div>
            </div>

@@ -6,6 +6,10 @@ import auth from '../../firebase';
 
 const Header = () => {
     const [user] = useAuthState(auth);
+    const logOut =() =>{
+        signOut(auth);
+        localStorage.removeItem('accessToken');
+    }
     const menuItems = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/about'>About</Link></li>
@@ -15,14 +19,14 @@ const Header = () => {
         {
             user?.uid ?
             <>
-                <li><Link to='/myBooking'>My Booking</Link></li>
-                <li><button className='mt-3 lg:mt-0' onClick={()=> signOut(auth)}>Sign Out</button></li>
+                <li><Link to='/dashboard'>Dashboard</Link></li>
+                <li><button className='mt-3 lg:mt-0' onClick={logOut}>Sign Out</button></li>
             </>
             :<li><Link to='/login'>Login</Link></li>
         }
     </>
     return (
-        <div className="navbar justify-around bg-base-100 p-5">
+        <div className="navbar justify-between bg-base-100 p-5">
             <div className="navbar-start w-auto">
                 <div className="dropdown">
                         <label tabIndex="0" className="btn btn-ghost lg:hidden">
@@ -34,10 +38,15 @@ const Header = () => {
                 </div>
                 <a href='/' className="btn btn-ghost normal-case text-xl">Doctors Portal</a>
             </div>
-            <div className="navbar-end hidden lg:flex w-auto">
+            <div className="navbar-center hidden lg:flex w-auto">
                 <ul className="menu menu-horizontal p-0 space-x-2">
                     {menuItems}
                 </ul>
+            </div>
+            <div className="navbar-end lg:hidden">
+                <label htmlFor="my-drawer-2" className="btn bg-gradient-to-r text-white border-0 from-secondary to-primary drawer-button ">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="rotate-180 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
             </div>
         </div>
     );

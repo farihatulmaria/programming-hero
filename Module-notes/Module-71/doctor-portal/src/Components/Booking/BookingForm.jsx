@@ -2,8 +2,9 @@ import axios from 'axios';
 import { format } from 'date-fns';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase';
-const BookingForm = ({treatment,Date,setTreatment}) => {
+const BookingForm = ({refetch,treatment,Date,setTreatment}) => {
     const [user] = useAuthState(auth);
     const {_id,name,slots}= treatment;
     const formattedDate = format(Date,'PP');
@@ -22,14 +23,27 @@ const BookingForm = ({treatment,Date,setTreatment}) => {
             phone, 
             date,
             time,
-            name,
+            treatment:name,
             treatmentId:_id,
         }
         const url = 'http://localhost:5000/booking';
-        axios.post(url,{
-            body:booking,
+        axios.post(url,{ 
+            headers:{
+                'authorization':`user ${localStorage.getItem('accessToken')}`
+            },
+            booking:booking,
         })
-        .then(res => setTreatment(null))
+        .then(res => {
+            const data = res.data;
+            if(data.success){
+                toast.success(`Appointment is set, ${formattedDate} at ${slot}`)
+            }
+            else{
+                toast.error(`Already have and appointment on ${data?.booking?.date} at ${slot}`)
+            }
+            refetch()
+            setTreatment(null);
+        })
     }
     return (
         <div>

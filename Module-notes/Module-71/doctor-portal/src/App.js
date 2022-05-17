@@ -8,9 +8,13 @@ import Header from './Components/Header/Header';
 import RequireAuth from './Components/RequireAuth /RequireAuth';
 import About from './Pages/About/About';
 import Appointment from './Pages/Appointment/Appointment';
+import Dashboard from './Pages/Dashboard/Dashboard';
+import MyAppointment from './Pages/Dashboard/MyAppointment';
+import MyReviews from './Pages/Dashboard/MyReviews';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
+import Users from './Pages/Dashboard/User'
 function App() {
   return (
     <div className='max-w-7xl mx-auto'>
@@ -24,6 +28,16 @@ function App() {
             <Appointment/>
           </RequireAuth>
         }/>
+        <Route path="/dashboard" element={
+          <RequireAuth>
+            <Dashboard />
+          </RequireAuth>
+          }>
+          <Route index path="/dashboard" element={<MyAppointment />} />
+          <Route path="reviews" element={<MyReviews />} />
+          <Route path="users" element={<Users/>} />
+        </Route>
+
         <Route path='/contact' element={<Contact/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/sign-up' element={<SignUp/>}/>
