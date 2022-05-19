@@ -35,31 +35,31 @@ const MyAppointment = () => {
                     <h1 className='font-bold text-3xl mx-4'>Sorry But, You Haven't Booked Yet</h1>
                 </div>
                 :
-            <div className="overflow-x-auto my-5">
-                <table className="table w-full">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Service</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {
-                            appointments.map((a,index)=>
-                            <tr key={index + 1}>
-                                <td>{index + 1}</td>
-                                <td>{a.patient}</td>
-                                <td>{a.treatment}</td>
-                                <td>{a.date}</td>
-                                <td>{a.time}</td>
-                            </tr>)
-                        }
-                    </tbody>
-                </table>
-            </div>
+                <div className="overflow-x-auto my-5">
+                    <table className="table w-full">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Service</th>
+                                <th>Date</th>
+                                <th>Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                appointments.map((a,index)=>
+                                <tr key={index + 1}>
+                                    <td>{index + 1}</td>
+                                    <td>{a.patient}</td>
+                                    <td>{a.treatment}</td>
+                                    <td>{a.date}</td>
+                                    <td>{a.time}</td>
+                                </tr>)
+                            }
+                        </tbody>
+                    </table>
+                </div>
             }
         </div>
     );

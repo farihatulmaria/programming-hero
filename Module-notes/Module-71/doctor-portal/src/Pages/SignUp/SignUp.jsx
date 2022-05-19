@@ -37,7 +37,7 @@ const SignUp = () => {
         return <Loading/>
     }
     if(token){
-        navigate('/');
+        navigate(from);
     }
     return (
         <div className='SignUp'>
@@ -78,8 +78,11 @@ const SignUp = () => {
                             </form>
                             
                             <p className='text-sm text-center'>Already have an account?<Link className='!text-primary' to="/login">Login now</Link></p>
-                            <p className="text-red-600 text-center">{error?.message ||updatingError?.message}</p>
+
+                            <p className="text-red-600 text-center">{error?.message ||updatingError?.message || googleError.message}</p>
+                            
                             <div className="divider">OR</div>
+                            
                             <button className='btn-outlined' onClick={()=>signInWithGoogle()}>Continue with Google</button>
                         </div>
                 </div>

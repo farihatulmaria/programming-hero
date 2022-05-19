@@ -10,8 +10,7 @@ const User = ({date}) => {
             'authorization': `user ${localStorage.getItem('accessToken')}`
         }
     }).then(res =>
-      res.json())
-    )
+      res.json()))
     if (isLoading){
         return <Loading/>
     }

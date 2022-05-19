@@ -36,11 +36,25 @@ async function run(){
         const servicesCollection = client.db("doctor-portal").collection("services");
         const bookingCollection = client.db("doctor-portal").collection("booking");
         const usersCollection = client.db("doctor-portal").collection("users");
+        const doctorsCollection = client.db("doctor-portal").collection("doctors");
+
+
+        const verifyAdmin = async (req,res,next)=>{
+          const requester = req.decoded.email;
+          const requesterAccount = await usersCollection.findOne({ email: requester });
+          if (requesterAccount.role === 'admin') {
+            next();
+          }
+          else {
+            res.status(403).send({ message: 'forbidden' });
+          }
+        }
+
 
         // services
         app.get('/services', async (req,res)=>{
           const query = {};
-          const cursor = servicesCollection.find(query);
+          const cursor = servicesCollection.find(query).project({name:1,});
           const services = await cursor.toArray();
           res.send(services);
         })
@@ -168,6 +182,22 @@ async function run(){
             res.send({ success: true, result })
         })
 
+
+        // doctors
+
+
+        app.get('/doctors',verifyJWT,verifyAdmin, async (req,res)=>{
+          const doctors = await doctorsCollection.find({}).toArray();
+          res.send(doctors);
+        })
+
+
+        app.post('/doctors',verifyJWT, verifyAdmin , async (req,res)=>{
+          const doctor = req.body;
+          console.log(doctor);
+          const result = await doctorsCollection.insertOne(doctor);
+          res.send(result);
+        })
 
     }finally{
         
