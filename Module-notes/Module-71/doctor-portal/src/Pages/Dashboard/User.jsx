@@ -20,7 +20,7 @@ const User = ({date}) => {
     }
     return (
         <div className='allUsers'>
-           <h2 className="text-2xl">All Users: {users.length}</h2>
+           <h2 className="text-2xl">All Users: {users?.length}</h2>
            <div className="overflow-x-auto my-5">
                 <table className="table w-full">
                     <thead>

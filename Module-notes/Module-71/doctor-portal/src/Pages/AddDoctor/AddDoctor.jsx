@@ -7,7 +7,7 @@ const AddDoctor = () => {
     const { register,formState: { errors },reset, handleSubmit } = useForm();
     const imageStorage_KEY = '819f223923061b4eb407559d94688bce';
 
-    const { isLoading, error, data:services } = useQuery('users', () =>
+    const { isLoading, error, data:services } = useQuery('services', () =>
     fetch(`http://localhost:5000/services`,{
         method:'GET',
         headers:{

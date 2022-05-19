@@ -1,5 +1,5 @@
 const express = require('express');
-const { MongoClient, ServerApiVersion } = require('mongodb');
+const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 const cors = require('cors');
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
@@ -74,6 +74,8 @@ async function run(){
 
             - app.delete('/booking/:id') - deleting a booking
          */
+        
+        
         // users
         app.get('/users', verifyJWT,async(req,res)=>{
           const query = {};
@@ -166,6 +168,14 @@ async function run(){
           
       })
 
+        app.get('/booking/:id', verifyJWT, async(req, res) =>{
+        const id = req.params.id;
+        const query = {_id: ObjectId(id)};
+        const booking = await bookingCollection.findOne(query);
+        res.send(booking);
+        })
+
+
         app.post('/booking' ,async(req,res)=>{
             const booking = req.body.booking;
             const query = { 
@@ -185,8 +195,7 @@ async function run(){
 
         // doctors
 
-
-        app.get('/doctors',verifyJWT,verifyAdmin, async (req,res)=>{
+        app.get('/doctors', async (req,res)=>{
           const doctors = await doctorsCollection.find({}).toArray();
           res.send(doctors);
         })
@@ -194,11 +203,16 @@ async function run(){
 
         app.post('/doctors',verifyJWT, verifyAdmin , async (req,res)=>{
           const doctor = req.body;
-          console.log(doctor);
           const result = await doctorsCollection.insertOne(doctor);
           res.send(result);
         })
 
+        app.delete('/doctors/:email', async (req, res) => {
+          const email = req.params.email;
+          const filter = {email: email};
+          const result = await doctorsCollection.deleteOne(filter);
+          res.send(result);})
+        
     }finally{
         
     }

@@ -6,13 +6,12 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase';
 const BookingForm = ({refetch,treatment,Date,setTreatment}) => {
     const [user] = useAuthState(auth);
-    const {_id,name,slots}= treatment;
-    const formattedDate = format(Date,'PP');
+    const {_id,name,slots,price}= treatment;
+    const date = format(Date,'PP');
     const handleBooking =(e)=>{
         e.preventDefault();
         const event = e.target; 
         const slot = event.slot.value;
-        const date =  formattedDate;
         const time =  event.slot.value;
         const patient =  user.displayName;
         const phone =  event.phone.value;
@@ -24,6 +23,7 @@ const BookingForm = ({refetch,treatment,Date,setTreatment}) => {
             date,
             time,
             treatment:name,
+            price,
             treatmentId:_id,
         }
         const url = 'http://localhost:5000/booking';
@@ -36,7 +36,7 @@ const BookingForm = ({refetch,treatment,Date,setTreatment}) => {
         .then(res => {
             const data = res.data;
             if(data.success){
-                toast.success(`Appointment is set, ${formattedDate} at ${slot}`)
+                toast.success(`Appointment is set, ${date} at ${slot}`)
             }
             else{
                 toast.error(`Already have and appointment on ${data?.booking?.date} at ${slot}`)
@@ -53,7 +53,7 @@ const BookingForm = ({refetch,treatment,Date,setTreatment}) => {
                     <label htmlFor="booking-modal" className="btn bg-gradient-to-r border-0 from-secondary to-primary btn-sm btn-circle text-white absolute right-2 top-2">✕</label>
                     <h3 className="font-bold text-lg my-3 -mt-1 mb-5">{name}</h3>
                     <form onSubmit={handleBooking} className="space-y-4">
-                        <input type="text" name='date' placeholder="Date" className="!bg-slate-200" value={formattedDate} readOnly />
+                        <input type="text" name='date' placeholder="Date" className="!bg-slate-200" value={date} readOnly />
 
                         <select name='slot' className="select select-primary w-full max-w-lg">
                             <option disabled selected>Select Your Time</option>

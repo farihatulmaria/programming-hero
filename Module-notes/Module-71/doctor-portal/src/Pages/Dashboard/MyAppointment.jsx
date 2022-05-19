@@ -2,7 +2,7 @@ import axios from 'axios';
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase';
 const MyAppointment = () => {
     const [user] = useAuthState(auth);
@@ -10,7 +10,7 @@ const MyAppointment = () => {
     const  navigate = useNavigate();
     useEffect(() => {
       if(user){
-          axios.get(`http://localhost:5000/booking?patientEmail=${user.email}`,{
+           axios.get(`http://localhost:5000/booking?patientEmail=${user.email}`,{
               headers:{
                   'authorization':`user ${localStorage.getItem('accessToken')}`
               },
@@ -44,6 +44,7 @@ const MyAppointment = () => {
                                 <th>Service</th>
                                 <th>Date</th>
                                 <th>Time</th>
+                                <th>Payment</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -55,6 +56,13 @@ const MyAppointment = () => {
                                     <td>{a.treatment}</td>
                                     <td>{a.date}</td>
                                     <td>{a.time}</td>
+                                    <td>
+                                        {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+                                        {(a.price && a.paid) && <div>
+                                            <p><span className='text-success'>Paid</span></p>
+                                            <p>Transaction id: <span className='text-success'>{a.transactionId}</span></p>
+                                        </div>}
+                                    </td>
                                 </tr>)
                             }
                         </tbody>

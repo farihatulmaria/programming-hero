@@ -13,6 +13,7 @@ import Appointment from './Pages/Appointment/Appointment';
 import Dashboard from './Pages/Dashboard/Dashboard';
 import MyAppointment from './Pages/Dashboard/MyAppointment';
 import MyReviews from './Pages/Dashboard/MyReviews';
+import Payment from './Pages/Dashboard/Payment';
 import Users from './Pages/Dashboard/User';
 import Home from './Pages/Home/Home';
 import Login from './Pages/Login/Login';
@@ -53,6 +54,9 @@ function App() {
             <ManageDoctor/>
           </RequireAdmin>
       } />
+        <Route path="payment/:id" element={
+            <Payment/>
+        } />
         </Route>
 
         <Route path='/contact' element={<Contact/>}/>
