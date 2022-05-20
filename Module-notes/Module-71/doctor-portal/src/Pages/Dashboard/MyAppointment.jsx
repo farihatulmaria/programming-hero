@@ -10,11 +10,11 @@ const MyAppointment = () => {
     const  navigate = useNavigate();
     useEffect(() => {
       if(user){
-           axios.get(`http://localhost:5000/booking?patientEmail=${user.email}`,{
+        axios.get(`http://localhost:5000/booking?patientEmail=${user.email}`,{
               headers:{
                   'authorization':`user ${localStorage.getItem('accessToken')}`
               },
-          })
+          }) 
           .then(res=>{
             if(res.status === 401 || res.status === 403){
                 signOut(auth);

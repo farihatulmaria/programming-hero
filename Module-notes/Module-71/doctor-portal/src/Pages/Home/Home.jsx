@@ -1,11 +1,11 @@
 import React from 'react';
 import Banner from '../../Components/Banner/Banner';
 import Contact from '../../Components/Contact/Contact';
+import Footer from '../../Components/Footer/Footer';
 import HomeAppointment from '../../Components/HomeAppointment/HomeAppointment';
 import Info from '../../Components/Info/Info';
 import Services from '../../Components/Services/Services';
 import Testimonials from '../../Components/Testimonials/Testimonials';
-
 const Home = () => {
     return (
         <div className='home'>
