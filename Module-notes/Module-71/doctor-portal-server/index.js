@@ -209,8 +209,6 @@ async function run(){
             const result = await bookingCollection.insertOne(booking);
             res.send({ success: true, result })
         })
-
-
         app.patch('/booking/:id', verifyJWT, async(req, res) =>{
           const id = req.params.id;
           const payment = req.body

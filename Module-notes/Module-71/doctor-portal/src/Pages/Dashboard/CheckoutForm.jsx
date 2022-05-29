@@ -104,11 +104,11 @@ const CheckoutForm = ({appointment}) => {
                 },
             }}
         />
-        {cardError && <p className='text-error mt-1'>{cardError}</p>}
-        {transactionId && <p className='text-success mt-1'>Your TransactionId {transactionId}</p>}
-        <button className='my-2 btn-sm mt-4' type="submit" disabled={!stripe || !clientSecret}>
-            Pay
-        </button>
+            {cardError && <p className='text-error mt-1'>{cardError}</p>}
+            {transactionId && <p className='text-success mt-1'>Your TransactionId {transactionId}</p>}
+            <button className='my-2 btn-sm mt-4' type="submit" disabled={!stripe || !clientSecret}>
+                Pay
+            </button>
     </form>
     );
 };
