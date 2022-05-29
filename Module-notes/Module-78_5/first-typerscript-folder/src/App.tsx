@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import Counter from "./Components/Counter/Counter";
+import User from "./Components/User/User";
 
 // const user = "Jhon"; js
 const age: number = 54;
@@ -14,6 +16,7 @@ interface Person {
   name: string;
   age: number;
   address: string;
+  locaiton?: string; // if the object has this key / prop
 }
 
 const person: Person = {
@@ -22,10 +25,26 @@ const person: Person = {
   address: "4345 Hiddenview Drive Philadelphia, PA 19108",
 };
 
-console.log(age, isSmart, user, students, friends, person);
+// console.log(age, isSmart, user, students, friends, person);
+
+// function in typeScript
+
+const handleUsers = (age: number): number => {
+  const newAge: number = age + 1;
+  console.log(newAge);
+  return newAge;
+
+  // (parameter):some type means that the function can only return that typed value
+};
+handleUsers(2005);
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Counter />
+      <User name="Maria" age={20} />
+    </div>
+  );
 }
 
 export default App;
