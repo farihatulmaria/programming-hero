@@ -34,4 +34,9 @@ module.exports.addAProduct = async (req,res)=>{
     */ 
     res.send('products added')
 }
-// module.exports= {getAllProducts,addAProduct}
+/* you can do it like this module.exports= {getAllProducts,addAProduct}
+
+   or, you can do it like this:
+
+   module.exports.functionName(functionality) 
+*/ 
