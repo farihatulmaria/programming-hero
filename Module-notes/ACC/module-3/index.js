@@ -4,6 +4,8 @@ const cors = require('cors');
 const jwt = require('jsonwebtoken');
 const dbConnect = require('./utilities/DBConnet');
 const productRouter = require('./routes/version-1/products.route');
+const viewCount = require('./middleware/viewCount');
+const { default: rateLimit } = require('express-rate-limit');
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 require('dotenv').config();
 const app = express();
@@ -14,6 +16,9 @@ const port = process.env.PORT || 5000;
 
 app.use(cors())
 app.use(express.json())
+// app.use(express.static('pubilc'));
+app.set("view engine", "ejs")
+
 
 
 function verifyJWT(req,res,next){
@@ -35,6 +40,7 @@ function verifyJWT(req,res,next){
 
 // Database
 dbConnect();
+
 app.use('/products',productRouter)
 /*         api  version  route*/ 
 // app.use('/api/v1/products',productRouter) // for production level
@@ -240,7 +246,8 @@ run().catch(console.dir)
 
 
 app.get('/', async(req,res)=>{
-    res.send('server is running fast');
+    // res.sendFile(__dirname + '/pubilc/index.html')
+    res.render('home.ejs',{id:2})
 })
 app.all('*',(req,res)=>{
     res.send('Not Found')

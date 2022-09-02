@@ -2,6 +2,8 @@ const express = require('express');
 // const { getAllProducts, addAProduct } = require('../../controller/product.controller'); 
 /* add the function like .get(functionName) */
 const productController = require('../../controller/product.controller.js'); 
+const { limiter } = require('../../middleware/limlter.js');
+const viewCount = require('../../middleware/viewCount.js');
 const router = express.Router();
 
 /*
@@ -36,7 +38,7 @@ router
         )
 router
     .route('/:id')
-        .get(productController.getAProduct)
-        .post(productController.updateAProduct)
+        .get(viewCount,limiter,productController.getAProduct)
+        .patch(productController.updateAProduct)
 
 module.exports = router;
