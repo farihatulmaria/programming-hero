@@ -1,3 +1,5 @@
+
+
 const products = [
     {id:1,name:'product1'}, 
     {id:2,name:'product2'},
@@ -15,7 +17,7 @@ module.exports.getAllProducts = async (req,res,next)=>{
     The res object represents the HTTP response that an Express app sends when it gets an HTTP request.The object is always referred to as res (and the HTTP request is req) but its actual name is determined by the parameters to the callback function in which you’re working. */
     res.send(products)
 }
-module.exports.addAProduct = async (req,res)=>{
+module.exports.addAProduct = async (req,res,next)=>{
     products.push(res.body)
     res.send('products added')
 }
