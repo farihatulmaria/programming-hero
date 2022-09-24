@@ -49,26 +49,7 @@ const productSchema = mongoose.Schema({
         values: ["in-stock", "out-of-stock", "discontinued"],
         message: "status can't be {VALUE}".red.bold,
       },
-    },
-    // createdAt: {
-    //   type: Date,
-    //   default: Date.now,
-    // },
-    // updatedAt: {
-    //   type: Date,
-    //   detfault: Date.now
-    // }
-    // supplier: {
-    //   type: mongoose.Schema.Types.ObjectId,
-    //   ref: "Supplier"
-    // },
-    // categories: [{
-    //   name: {
-    //     type: String,
-    //     required: true
-    //   },
-    //   _id: mongoose.Schema.Types.ObjectId
-    // }]
+    }
   },{
     timestamps: true,
   })
