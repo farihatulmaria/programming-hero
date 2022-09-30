@@ -11,6 +11,7 @@ app.use(cors());
 //routes
 const productRoute = require('./Routes/Product.routes.js');
 const brandRoute = require("./Routes/Brand.routes.js");
+const storeRoute = require("./Routes/Store.routes.js");
 
 app.get("/", (req, res) => {
   res.send("Route is working! YaY!");
@@ -19,6 +20,7 @@ app.get("/", (req, res) => {
 
 app.use('/api/v1/product', productRoute);
 app.use("/api/v1/brand", brandRoute);
+app.use("/api/v1/store", storeRoute);
 
 module.exports = app;
 
