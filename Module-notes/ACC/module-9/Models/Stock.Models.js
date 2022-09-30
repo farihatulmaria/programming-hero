@@ -31,7 +31,7 @@ const stockSchema = mongoose.Schema({
         required:[true,'Product must have a price'],
         min:[1,"Price can't be negative"]
     },
-    imageURLs: [{
+    imageURLS: [{
         type: String,
         required: true,
         validate: {

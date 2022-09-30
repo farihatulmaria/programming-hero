@@ -8,6 +8,6 @@ router.route("/")
 
 router.route("/:id")
     .get(storeController.getAStore)
-    .patch(storeController.updateAStore);
+    .patch(storeController.updateAStore)
     
 module.exports = router

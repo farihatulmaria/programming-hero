@@ -11,11 +11,11 @@ const categorySchma = mongoose.Schema({
         lowercase:true,
         maxLength:100
     },
-    description:String,
+    description:String, 
     imageURL:{
-        type:true,
+        type:String,
         validate:[validator.isURL,"Please provide a valid image URL"]
-    },  
+    },
 },{timestamps:true})
 
 
