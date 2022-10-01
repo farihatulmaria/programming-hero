@@ -79,18 +79,8 @@ module.exports.updateAProduct = async (req,res)=>{
 
 module.exports.uploadAFile = async (req,res)=>{
     try {
-        // const result = await uploadAFileService(id,data)
-        res.status(200).json({
-            status:'passed',
-            message:"can upload the File",
-            Data:req.file
-        })
+        res.status(200).json(req.file)
     } catch (err) {
-        res.status(400).json({
-            status:'You shall not pass',
-            message:"can't upload the File",
-            error:err.message
-        })
     }
 
 }
