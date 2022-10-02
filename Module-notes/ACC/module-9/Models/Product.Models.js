@@ -79,6 +79,6 @@ const productSchema = mongoose.Schema({
    })
   
   
-  const Product = mongoose.model('Product', productSchema)
+  const Products = mongoose.model('Products', productSchema)
 
-  module.exports = Product;
+  module.exports = Products;

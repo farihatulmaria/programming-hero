@@ -1,5 +1,5 @@
 const Product = require("../Models/Product.Models");
-const { getAllProductsService, getAProductService, updateAProductService } = require("../Services/Product.service");
+const { getAllProductsService, getAProductService, updateAProductService,createProductService } = require("../Services/Product.service");
 
 module.exports.getAllProducts = async (req,res)=>{
     try {

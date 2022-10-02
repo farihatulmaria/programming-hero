@@ -30,7 +30,12 @@ const stockSchema = mongoose.Schema({
         type:Number,
         required:[true,'Product must have a price'],
         min:[1,"Price can't be negative"]
-    },
+    },/* 
+    imageURLS: [{
+        type: String,
+        required: true,
+        validate:[validator.isURl,"Please provide valid image urls"]
+    }], */
     imageURLS: [{
         type: String,
         required: true,
@@ -106,6 +111,11 @@ const stockSchema = mongoose.Schema({
           ref: "Brand",
           required: true,
         }
+      },
+      sellCount:{
+          type:Number,
+          default:0,
+          min:0
       }
 },{timestamps:true})
 

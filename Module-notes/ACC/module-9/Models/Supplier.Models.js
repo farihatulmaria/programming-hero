@@ -31,29 +31,29 @@ const supplierSchema = mongoose.Schema({
             ref:'Brand'
         }
     },
-    contactNumber:[{
-        type:String,
-        required:[true,"Please provid a contact number"],
-        validate:{
-            validator:(value)=>{
-                return validator.isMobliePhone(value);
-            }
+    contactNumber: [{
+        type: String,
+        required: [true, "Please provide a contact number"],
+        validate: {
+          validator: (value) => {
+            return validator.isMobilePhone(value);
         },
-        message:"Please Provide a valid phone number"
+          message: "Please provide a valid phone number",
+        }
     }],
-    emergencyContactNumber:[{
-        type:String,
-        required:[true,"Please provid a emergenc contact number"],
-        validate:{
-            validator:(value)=>{
-                return validator.isMobliePhone(value);
-            }
+    emergencyContactNumber: {
+        type: String,
+        required: [true, "Please provide  a emergency contact number"],
+        validate: {
+          validator: (value) => {
+            return validator.isMobilePhone(value);
+          },
+          message: "Please provide a valid phone number",
         },
-        message:"Please Provide a valid emergenc phone number"
-    }],
-    tradeLicenceNumber:{
-        type:Number,
-        required:[true,"Please Provide your trade Licence Number"]
+    },
+    tradeLicenceNumber: {
+        type: Number,
+        required: [true, "Please provide your trade licence number"],
     },
     presentAddress:{
         type:String,
@@ -83,7 +83,7 @@ const supplierSchema = mongoose.Schema({
     status:{
         type:String,
         enum:{
-            values: ["in-stock", "out-of-stock", "discontinued"],
+            values: ["active", "in-active"],
             message: " status can't be {VALUE} "
         },
     },

@@ -2,16 +2,16 @@ const {getSuppliersService,createSupplierService,getSupplierByIdService,updateSu
 
 module.exports.getSuppliers = async (req,res)=>{
     try {
-        const stores = await getSuppliersService();
+        const suppliers = await getSuppliersService();
         res.status(200).json({
             status:'passed',
-            message:"can get stores",
-            Data:stores
+            message:"can get suppliers",
+            Data:supplier
         })
     } catch (err) {
         res.status(400).json({
             status:'You shall not pass',
-            message:"can't get stores",
+            message:"can't get suppliers",
             error:err.message
         })
     }
@@ -23,13 +23,13 @@ module.exports.createASupplier = async (req,res)=>{
         const result = await createSupplierService(data);  
         res.status(200).json({
             status:'passed',
-            message:"can create stores",
+            message:"can create supplier",
             Data:result
         })
     } catch (err) {
         res.status(400).json({
             status:'You shall not pass',
-            message:"can't create stores",
+            message:"can't create supplier",
             error:err.message
         })
     }
@@ -41,13 +41,13 @@ module.exports.getASupplierById = async (req,res)=>{
         const result = await getSupplierByIdService(id);
         res.status(200).json({
             status:'passed',
-            message:"can get the store",
+            message:"can get the supplier",
             Data:result
         })
     } catch (err) {
         res.status(400).json({
             status:'You shall not pass',
-            message:"can't get the store",
+            message:"can't get the supplier",
             error:err.message
         })
     }
@@ -60,13 +60,13 @@ module.exports.updateASupplierById = async (req,res)=>{
         const result = await updateSupplierByIdService(id,data)
         res.status(200).json({
             status:'passed',
-            message:"can update the store",
+            message:"can update the supplier",
             Data:result
         })
     } catch (err) {
         res.status(400).json({
             status:'You shall not pass',
-            message:"can't update the store",
+            message:"can't update the supplier",
             error:err.message
         })
     }
