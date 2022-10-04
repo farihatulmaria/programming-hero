@@ -80,3 +80,20 @@ module.exports.signUp = async (req,res,next)=>{
     }
 }
 
+module.exports.getMe = async(req,res)=>{
+    try {
+        const user = await getUserByEmail(req.user?.email)
+        res.status(200).json({
+            status:'passed',
+            message:"You are a user",
+            Data:user
+        })
+        
+    } catch (err) {
+        res.status(400).json({
+            status:'You shall not pass',
+            message:"you aren't a user",
+            error:err.message
+        })
+    }
+}

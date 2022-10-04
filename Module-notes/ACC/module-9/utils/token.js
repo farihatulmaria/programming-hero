@@ -5,7 +5,7 @@ module.exports.generateToken = (userInfo)=>{
         role:userInfo.role
     };
     const token = jwt.sign(payLoad,process.env.TOKEN,{
-        expiresIn:"20"
+        expiresIn:"30d"
     })
     return token
 }
