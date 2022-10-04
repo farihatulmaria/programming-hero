@@ -9,4 +9,5 @@ router.route("/")
 router.route("/:id")
   .get(categoryController.getACategoryById)
   .patch(categoryController.updateACategoryById)
+  .delete(categoryController.deleteACategoryById)
 module.exports = router

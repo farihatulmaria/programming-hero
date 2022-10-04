@@ -72,3 +72,21 @@ module.exports.updateACategoryById = async (req,res)=>{
     }
 
 }
+module.exports.deleteACategoryById = async (req,res)=>{
+    const {id} = req.params;
+    try {
+        const result = await deleteCategoryByIdService(id)
+        res.status(200).json({
+            status:'passed',
+            message:"can delete the category",
+            Data:result
+        })
+    } catch (err) {
+        res.status(400).json({
+            status:'You shall not pass',
+            message:"can't delete the category",
+            error:err.message
+        })
+    }
+
+}

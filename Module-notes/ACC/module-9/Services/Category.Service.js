@@ -15,3 +15,8 @@ module.exports.updateCategoryByIdService = async (categoryId,data)=>{
     const updatedCategory = Category.updateOne({_id:categoryId},{$set:data},{runValidators:true});
     return updatedCategory; 
 }
+
+module.exports.deleteCategoryByIdService = async (categoryId)=>{
+    const deleteCategory = Category.deleteOne({_id:categoryId},{runValidators:true});
+    return deleteCategory; 
+}
