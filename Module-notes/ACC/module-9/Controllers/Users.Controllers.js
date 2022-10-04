@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
-const { signUpService, getUserByEmail } = require("../Services/Users.Services")
+const { signUpService, getUserByEmail } = require("../Services/Users.Services");
+const { generateToken } = require('../utils/token');
 
 module.exports.signUp = async (req,res,next)=>{
     const userInfo = req.body;
@@ -59,11 +60,16 @@ module.exports.signUp = async (req,res,next)=>{
                 error:"You're account isn't active yet",
             })
         }
+        const userToken = generateToken(user);
+        const {password:pwd ,...others} =  user.toObject()
 
         res.status(200).json({
             status:'passed',
-            message:"you are a user",
-            Data:result
+            message:"You are a user now",
+            Data:{
+                user:others
+                token:userToken
+            }
         })
     } catch (err) {
         res.status(400).json({
