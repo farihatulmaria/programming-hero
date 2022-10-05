@@ -1,6 +1,24 @@
 const bcrypt = require('bcryptjs');
-const { signUpService, getUserByEmail } = require("../Services/Users.Services");
+const { signUpService, getUserByEmail, deleteUser,getAllUsersService } = require("../Services/Users.Services");
 const { generateToken } = require('../utils/token');
+
+module.exports.getAllUsers = async(req,res)=>{
+    try {
+        const users = await getAllUsersService();
+        res.status(200).json({
+            status:'passed',
+            message:"got all the users",
+            Data:users
+        })
+        
+    } catch (err) {
+        res.status(200).json({
+            status:'passed',
+            message:"can't get all the users",
+            Data:result
+        }) 
+    }
+}
 
 module.exports.signUp = async (req,res,next)=>{
     const userInfo = req.body;
@@ -93,6 +111,25 @@ module.exports.getMe = async(req,res)=>{
         res.status(400).json({
             status:'You shall not pass',
             message:"you aren't a user",
+            error:err.message
+        })
+    }
+}
+
+module.exports.deleteUser = async(req,res)=>{
+    const { id } = req.params
+    try {
+        const result = await deleteUser(id);
+        res.status(200).json({
+            status:'passed',
+            message:"deleted the user",
+            Data:result
+        })
+        
+    } catch (err) {
+        res.status(400).json({
+            status:'You shall not pass',
+            message:"can't delete the user",
             error:err.message
         })
     }

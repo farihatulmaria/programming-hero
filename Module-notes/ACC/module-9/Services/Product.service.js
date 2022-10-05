@@ -17,3 +17,7 @@ module.exports.updateAProductService = async(id,data) =>{
     const product = await Products.find({_id:id},{$set:data},{runValidators:true});
     return product;
 }
+module.exports.deleteAProductService = async(id) =>{
+    const deleteProduct = await Products.deleteOne({_id:id},{runValidators:true});
+    return deleteProduct;
+}

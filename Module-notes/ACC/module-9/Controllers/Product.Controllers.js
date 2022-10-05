@@ -74,6 +74,25 @@ module.exports.updateAProduct = async (req,res)=>{
 
 }
 
+module.exports.deleteAProduct = async (req,res)=>{
+    const {id} = req.params;
+    try {
+        const result = await deleteAProductService(id)
+        res.status(200).json({
+            status:'passed',
+            message:"deleted the product",
+            Data:result
+        })
+    } catch (err) {
+        res.status(400).json({
+            status:'You shall not pass',
+            message:"can't delete the product",
+            error:err.message
+        })
+    }
+
+}
+
 
 
 

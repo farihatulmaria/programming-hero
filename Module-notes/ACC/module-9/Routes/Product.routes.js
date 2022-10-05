@@ -13,5 +13,6 @@ router.route("/")
 router.route("/:id")
         .get(productController.getAProduct)
         .patch(authorization("admin","store-manger"), productController.updateAProduct)
+        .delete(authorization("admin"), productController.deleteAProduct)
 
 module.exports = router
