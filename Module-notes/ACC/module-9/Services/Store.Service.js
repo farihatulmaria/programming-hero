@@ -15,3 +15,8 @@ module.exports.updateStoreByIdService = async (storeId,data)=>{
     const updatedStore = Store.updateOne({_id:storeId},{$set:data},{runValidators:true});
     return updatedStore; 
 }
+module.exports.deleteStoreByIdService = async (storeId)=>{
+    const deletedStore = Store.deleteOne({_id:storeId},{runValidators:true});
+    return deletedStore; 
+}
+

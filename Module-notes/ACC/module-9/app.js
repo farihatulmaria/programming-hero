@@ -30,5 +30,3 @@ app.use("/api/v1/stock", stockRoute);
 
 module.exports = app;
 
-
-

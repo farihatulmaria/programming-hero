@@ -5,7 +5,7 @@ module.exports.getStores = async (req,res)=>{
         const stores = await getStoresService();
         res.status(200).json({
             status:'passed',
-            message:"can get stores",
+            message:"got all stores",
             Data:stores
         })
     } catch (err) {
@@ -23,7 +23,7 @@ module.exports.createAStore = async (req,res)=>{
         const result = await createStoreService(data);  
         res.status(200).json({
             status:'passed',
-            message:"can create stores",
+            message:"created stores",
             Data:result
         })
     } catch (err) {
@@ -41,7 +41,7 @@ module.exports.getAStore = async (req,res)=>{
         const result = await getStoreByIdService(id);
         res.status(200).json({
             status:'passed',
-            message:"can get the store",
+            message:"got the store",
             Data:result
         })
     } catch (err) {
@@ -60,13 +60,32 @@ module.exports.updateAStore = async (req,res)=>{
         const result = await updateStoreByIdService(id,data)
         res.status(200).json({
             status:'passed',
-            message:"can update the store",
+            message:"updated the store",
             Data:result
         })
     } catch (err) {
         res.status(400).json({
             status:'You shall not pass',
             message:"can't update the store",
+            error:err.message
+        })
+    }
+
+}
+
+module.exports.deleteAStore = async (req,res)=>{
+    const {id} = req.params;
+    try {
+        const result = await deleteStoreByIdService(id)
+        res.status(200).json({
+            status:'passed',
+            message:"deleted the store",
+            Data:result
+        })
+    } catch (err) {
+        res.status(400).json({
+            status:'You shall not pass',
+            message:"can't delete the store",
             error:err.message
         })
     }

@@ -9,5 +9,6 @@ router.route("/")
 router.route("/:id")
     .get(storeController.getAStore)
     .patch(storeController.updateAStore)
+    .delete(storeController.deleteAStore)
     
 module.exports = router
