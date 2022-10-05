@@ -82,7 +82,7 @@ module.exports.signUp = async (req,res,next)=>{
 
 module.exports.getMe = async(req,res)=>{
     try {
-        const user = await getUserByEmail(req.user?.email)
+        const user = await getUserByEmail(req?.user?.email);
         res.status(200).json({
             status:'passed',
             message:"You are a user",

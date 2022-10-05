@@ -11,7 +11,11 @@ module.exports.getSupplierByIdService = async (SupplierId) =>{
     const supplier = await Supplier.findOne({_id:SupplierId})
     return supplier;
 }
-module.exports.updateSupplierByIdService = async (SupplierId,data)=>{
-    const updatedSupplier = Supplier.updateOne({_id:SupplierId},{$set:data},{runValidators:true});
+module.exports.updateSupplierByIdService = async (supplierId,data)=>{
+    const updatedSupplier = Supplier.updateOne({_id:supplierId},{$set:data},{runValidators:true});
     return updatedSupplier; 
+}
+module.exports.deleteSupplierByIdService = async (supplierId)=>{
+    const deletedSupplier = Supplier.updateOne({_id:supplierId},{runValidators:true});
+    return deletedSupplier; 
 }

@@ -9,5 +9,6 @@ router.route("/")
 router.route("/:id")
     .get(supplierController.getASupplierById)
     .patch(supplierController.updateASupplierById)
+    .delete(supplierController.deleteASupplierById)
     
 module.exports = router

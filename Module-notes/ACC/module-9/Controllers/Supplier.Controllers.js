@@ -72,3 +72,23 @@ module.exports.updateASupplierById = async (req,res)=>{
     }
 
 }
+
+
+module.exports.deleteASupplierById = async (req,res)=>{
+    const {id} = req.params;
+    try {
+        const result = await deleteSupplierByIdService(id)
+        res.status(200).json({
+            status:'passed',
+            message:"deleted the supplier",
+            Data:result
+        })
+    } catch (err) {
+        res.status(400).json({
+            status:'You shall not pass',
+            message:"can't delete the supplier",
+            error:err.message
+        })
+    }
+
+}

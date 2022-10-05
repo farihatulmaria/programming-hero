@@ -15,6 +15,7 @@ const storeRoute = require("./Routes/Store.routes");
 const categoryRoute = require("./Routes/Category.routes");
 const supplierRoute = require("./Routes/Supplier.routes");
 const stockRoute = require("./Routes/Stock.routes");
+const userRoute = require("./Routes/Users.Routes");
 
 app.get("/", (req, res) => {
   res.send("Route is working! YaY!");
@@ -27,6 +28,7 @@ app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/store", storeRoute);
 app.use("/api/v1/supplier", supplierRoute);
 app.use("/api/v1/stock", stockRoute);
+app.use("/api/v1/user", userRoute);
 
 module.exports = app;
 
