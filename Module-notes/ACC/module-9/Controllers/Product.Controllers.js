@@ -6,7 +6,7 @@ module.exports.getAllProducts = async (req,res)=>{
         const products = await getAllProductsService();
         res.status(200).json({
             status:'passed',
-            message:"can get products",
+            message:"got all products",
             Data:products
         })
     } catch (err) {
@@ -42,7 +42,7 @@ module.exports.getAProduct = async (req,res)=>{
         const result = await getAProductService(id);
         res.status(200).json({
             status:'passed',
-            message:"can get the product",
+            message:"got the product",
             Data:result
         })
     } catch (err) {
@@ -61,7 +61,7 @@ module.exports.updateAProduct = async (req,res)=>{
         const result = await updateAProductService(id,data)
         res.status(200).json({
             status:'passed',
-            message:"can update the product",
+            message:"updated the product",
             Data:result
         })
     } catch (err) {
@@ -81,6 +81,11 @@ module.exports.uploadAFile = async (req,res)=>{
     try {
         res.status(200).json(req.file)
     } catch (err) {
+        res.status(400).json({
+            status:'You shall not pass',
+            message:"can't get the file",
+            error:err.message
+        })
     }
 
 }
