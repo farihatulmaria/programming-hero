@@ -1,5 +1,6 @@
 const bcrypt = require('bcryptjs');
 const { signUpService, getUserByEmail, deleteUser,getAllUsersService } = require("../Services/Users.Services");
+const { sendMailWithMailGun,sendMailWithGmail } = require('../utils/email');
 const { generateToken } = require('../utils/token');
 
 module.exports.getAllUsers = async(req,res)=>{
@@ -23,7 +24,20 @@ module.exports.getAllUsers = async(req,res)=>{
 module.exports.signUp = async (req,res,next)=>{
     const userInfo = req.body;
     try {
-        const result = await signUpService(userInfo);
+        const user = await signUpService(userInfo);
+        const token = user.generateConfirmationToken();
+
+        await user.save({ validateBeforeSave: false });
+    
+        const mailData = {
+          to: [user.email],
+          subject: "Verify your Account",
+          text: `Thank you for creating your account. Please confirm your account here: ${
+            req.protocol
+          }://${req.get("host")}${req.originalUrl}/confirmation/${token}`,
+        };
+
+
         res.status(200).json({
             status:'passed',
             message:"you are now a user",
@@ -37,6 +51,48 @@ module.exports.signUp = async (req,res,next)=>{
         })
     }
 }
+
+module.exports.confirmEmail = async (req, res) => {
+    try {
+      const { token } = req.params;
+  
+  
+      const user = await findUserByToken(token);
+  
+      if(!user){
+        return res.status(403).json({
+          status: "fail",
+          error: "Invalid token"
+        });
+      }
+  
+      const expired = new Date() > new Date(user.confirmationTokenExpires);
+  
+      if(expired){
+        return res.status(401).json({
+          status: "fail",
+          error: "Token expired"
+        });
+      }
+  
+      user.status = "active";
+      user.confirmationToken = undefined;
+      user.confirmationTokenExpires = undefined;
+  
+      user.save({ validateBeforeSave: false });
+  
+      res.status(200).json({
+        status: "success",
+        message: "Successfully activated your account.",
+      });
+    } catch (error) {
+      console.log(error);
+      res.status(500).json({
+        status: "fail",
+        error,
+      });
+    }
+  };
 /** 
  * 1. Check if email and pasword are given
  * 2. find user with email in db

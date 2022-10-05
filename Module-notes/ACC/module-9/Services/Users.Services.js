@@ -12,8 +12,11 @@ module.exports.signUpService = async (userInfo)=>{
 }
 
 module.exports.getUserByEmail = async (email)=> return await Users.findOne({email:email});
+module.exports.getUserByToken = async (token)=> return await Users.findOne({token:token});
 
 module.exports.deleteUser = async (userId)=>{
     const deletedUser = await Users.deleteOne({_id:userId});
     return deletedUser;
 }
+
+

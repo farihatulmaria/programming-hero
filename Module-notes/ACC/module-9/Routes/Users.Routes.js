@@ -6,6 +6,7 @@ verify
 const router = express.Router();
 
 router.post("/signup",usersController.signUp)
+router.get("/signup/confirmation/:token",usersController.confirmEmail)
 router.post("/login",usersController.login)
 router.get("/me",verifyToken,usersController.getMe)
 router.get("/",authorization("admin"),usersController.getAllUsers)

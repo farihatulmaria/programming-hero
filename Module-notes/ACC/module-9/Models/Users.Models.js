@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const validator = require('validator');
 const { ObjectId } = mongoose.Schema.Types;
 const bcrypt = require('bcryptjs');
-
+const crypto = require('crypto')
 const usersSchme = mongoose.Schema({
     email:{
         type:String,
@@ -69,6 +69,8 @@ const usersSchme = mongoose.Schema({
         enum:["active","in-active","blocked"],
         default:"active"
     },
+    confirmationToken:String, 
+    confirmationTokenExpires:Date,
     passwordChangedAt:Date, 
     passwordResetToken:String,
     passwordResetExpires:Date,
@@ -81,11 +83,21 @@ usersSchme.pre("save",function(next){
     this.password = hashedPassword;
     this.confirmPassword = undefined
 })
-
 usersSchme.methods.comparePassword=function(password,hash){
     const isPasswordValid = bcrypt.compareSync(password,hash);
     return isPasswordValid
 }
+usersSchme.methods.generateComfirmationToken=function(){
+    const token = crypto.randomBytes(32).toString("hex");
+    this.confirmationToken = token;
+    
+    const date = new Date();
+    date.setDate(date.getDate()+1);
+    this.confirmationTokenExpires =date;
+
+    return token;
+}
+
 const Users = mongoose.model('Users',usersSchme);
 
 module.exports = Users;
