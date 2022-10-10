@@ -32,9 +32,7 @@ module.exports.signUp = async (req,res,next)=>{
         const mailData = {
           to: [user.email],
           subject: "Verify your Account",
-          text: `Thank you for creating your account. Please confirm your account here: ${
-            req.protocol
-          }://${req.get("host")}${req.originalUrl}/confirmation/${token}`,
+          text: `Thank you for creating your account. Please confirm your account here: ${req.protocol}://${req.get("host")}${req.originalUrl}/confirmation/${token}`,
         };
 
 
