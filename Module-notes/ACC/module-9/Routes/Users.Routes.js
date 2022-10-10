@@ -2,7 +2,6 @@ const express = require('express');
 const usersController = require('../Controllers/Users.Controllers');
 const { authorization } = require('../middlewares/authorization');
 const { verifyToken } = require('../middlewares/velifyToken');
-verify
 const router = express.Router();
 
 router.post("/signup",usersController.signUp)
