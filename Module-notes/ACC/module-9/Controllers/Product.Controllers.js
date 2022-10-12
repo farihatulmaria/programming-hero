@@ -93,9 +93,6 @@ module.exports.deleteAProduct = async (req,res)=>{
 
 }
 
-
-
-
 module.exports.uploadAFile = async (req,res)=>{
     try {
         res.status(200).json(req.file)
