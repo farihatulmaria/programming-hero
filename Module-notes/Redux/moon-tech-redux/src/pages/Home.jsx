@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import ProductCard from '../Components/ProductCard';
 
+export let allproducts;
+
 const Home = () => {
   const [products, setProducts] = useState([]);
+  allproducts = products;
   useEffect(() => {
     fetch('products.json')
     .then(res=>res.json())
