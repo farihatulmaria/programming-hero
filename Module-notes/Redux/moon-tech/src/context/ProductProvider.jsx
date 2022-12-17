@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useReducer } from 'react';
 import { actionTypes } from '../state/ProductState/ActionTypes';
 import { initialState, ProductReducer } from '../state/ProductState/ProductReduces';
 
-const PRODUCT_CONTEXTS = createContext()
+const PRODUCT_CONTEXTS = createContext();
 
 const ProductProvider = ({children}) => {
     const [state ,dispatch] = useReducer(ProductReducer,initialState)

@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard from "../Components/ProductCard";
+import ProductCard from "../../Components/ProductCard";
 import { allproducts } from "./Home";
 
 const TopRated = () => {

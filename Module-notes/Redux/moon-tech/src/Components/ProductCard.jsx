@@ -4,7 +4,7 @@ import { useProducts } from '../context/ProductProvider';
 import { actionTypes } from "../state/ProductState/ActionTypes";
 
 const ProductCard = ({ product }) => {
-  const {dispatch}=useProducts()
+  const {dispatch}=useProducts();
   return (
     <div
       className='shadow-lg rounded-3xl border  p-3 flex flex-col text-indigo-900'
@@ -15,6 +15,7 @@ const ProductCard = ({ product }) => {
       </div>
       <h1 className='font-bold text-center'>{product.model}</h1>
       <p className='text-center font-semibold mb-3'>Rating: {product.rating}</p>
+      <p className='text-center font-semibold mb-3'>Brand: {product.brand}</p>
       <div className=' flex-1'>
         <ul className='space-y-2'>
           {product.keyFeature.map((feature) => {

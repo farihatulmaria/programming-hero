@@ -4,11 +4,11 @@ import store from './redux/store';
 import routes from "./routes/routes";
 function App() {
   return (
-    <div>
+    <>
       <Provider store={store}>
         <RouterProvider router={routes}/>
       </Provider>
-    </div>
+    </>
   );
 }
 
