@@ -7,19 +7,23 @@ export let allproducts;
 
 const Home = () => {
   const [products, setProducts] = useState([]);
-  const dispatch = useDispatch();
-
-  const filters = useSelector(state=>state.filter.filters);
-  const {stock,brands}= filters;
   allproducts = products;
+
   useEffect(() => {
     fetch("http://localhost:5000/products")
       .then((res) => res.json())
       .then((data) => setProducts(data.data));
   }, []);
 
+  const dispatch = useDispatch();
+  
+  const filters = useSelector(state=>state.filter.filters);
+  const {stock,brands}= filters;
+
   const activeClass = "text-white  bg-indigo-500 border-transparent";
+
   let content;
+
   if(products.length >= 1){
     content = products.map(product=><ProductCard key={product._id} product={product}/>)
   }
