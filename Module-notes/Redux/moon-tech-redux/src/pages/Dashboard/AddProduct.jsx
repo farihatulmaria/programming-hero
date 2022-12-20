@@ -1,21 +1,22 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from 'react-redux';
-import { addProduct } from "../../redux/actionCreator/productAction";
+import { useSelector } from 'react-redux';
+import addProductData from "../../redux/thunk/products/addProductData";
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
-  const dispatch = useDispatch()
+  const products = useSelector(state=>state.product.allProducts);
+  console.log(products);
   const submit = (data) => {
     const {model,brand,status,price,keyFeature1,keyFeature2,keyFeature3,keyFeature4} =data
     const product = {
         model: model,
         brand: brand,
         status: status === "true" ? true : false,
-        price: price,
+        price: Number(price),
         keyFeature: [keyFeature1,keyFeature2,keyFeature3,keyFeature4,],
         spec: [],
     };
-    dispatch(addProduct(product))
+    addProductData(product)
   };
 
   return (
@@ -29,6 +30,12 @@ const AddProduct = () => {
             Model
           </label>
           <input type='text' id='model' className="border py-2 border-grey-300" {...register("model", {required:true})} />
+        </div>
+        <div className='flex flex-col w-full max-w-xs'>
+          <label className='mb-2' htmlFor='image'>
+            Price
+          </label>
+          <input type='number' className="border py-2 border-grey-300" name='price' id='price' {...register("price", {required:true})} />
         </div>
         <div className='flex flex-col w-full max-w-xs'>
           <label className='mb-2' htmlFor='image'>

@@ -1,8 +1,9 @@
 import React from "react";
 import { MdDeleteForever } from 'react-icons/md';
 import { useSelector } from "react-redux";
+import deleteProductData from "../../redux/thunk/products/deleteProductData";
 const ProductList = () => {
-  const products = useSelector(state=>state.product.allProducts);
+  const products = useSelector(state=>state.allProducts);
   return (
     <div className='flex flex-col justify-center items-center h-full w-full '>
       <div className='w-full max-w-7xl mx-auto rounded-lg  bg-white shadow-lg border border-gray-200'>
@@ -33,7 +34,7 @@ const ProductList = () => {
             </thead>
 
             <tbody className='text-sm divide-y divide-gray-100'>
-              {products?.map(({ model, brand, price, status, _id }) => (
+              {products?.map(({_id,model,brand,status,price}) => (
                 <tr key={_id}>
                   <td className='p-2'>
                     <input type='checkbox' className='w-5 h-5' value='id-1' />
@@ -60,7 +61,7 @@ const ProductList = () => {
                   </td>
                   <td className='p-2'>
                     <div className='flex justify-center'>
-                      <button className='text-red-700'>
+                      <button onClick={()=>deleteProductData(_id)} className='text-red-700'>
                         <MdDeleteForever size={30}/>
                       </button>
                     </div>
