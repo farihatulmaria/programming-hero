@@ -1,12 +1,18 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../actionTypes";
+import { ADD_TO_CART, LOAD_PRODUCT, REMOVE_FROM_CART } from "../actionTypes";
 
 const initalState = { 
-    cart:[]
+    cart:[],
+    allProducts:[]
 };
 
 const productReducer =( state = initalState ,action) => {
     const selectedProduct = state.cart.find(product=> product._id === action.payload._id);
     switch(action.type){
+        case LOAD_PRODUCT:
+            return{
+                ...state,
+                allProducts:action.payload
+            }
         case ADD_TO_CART:
             if(selectedProduct){
                 const newCart = state.cart.filter(product=>product._id !== selectedProduct._id)

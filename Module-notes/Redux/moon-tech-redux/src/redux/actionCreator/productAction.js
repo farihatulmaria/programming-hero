@@ -1,5 +1,11 @@
-import { ADD_TO_CART, REMOVE_FROM_CART } from "../actionTypes"
+import { ADD_TO_CART, LOAD_PRODUCT, REMOVE_FROM_CART } from "../actionTypes"
 
+export const loadProduct =(data)=>{
+    return{
+        type:LOAD_PRODUCT,
+        payload:data
+    }
+}
 export const addToCart =(data)=>{
     return{
         type:ADD_TO_CART,

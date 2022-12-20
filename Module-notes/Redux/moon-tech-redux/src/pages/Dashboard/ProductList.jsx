@@ -1,8 +1,8 @@
 import React from "react";
 import { MdDeleteForever } from 'react-icons/md';
-import { allproducts } from "../Main/Home";
+import { useSelector } from "react-redux";
 const ProductList = () => {
-  let products = allproducts;
+  const products = useSelector(state=>state.product.allProducts);
   return (
     <div className='flex flex-col justify-center items-center h-full w-full '>
       <div className='w-full max-w-7xl mx-auto rounded-lg  bg-white shadow-lg border border-gray-200'>
