@@ -3,14 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../../Components/ProductCard";
 import { toogleBrands, toogleStock } from '../../redux/actionCreator/filterAction';
 import fetchProductData from "../../redux/thunk/products/fetchProducts";
-
 const Home = () => {
   const dispatch = useDispatch()
-  const products = useSelector(state=>state.product.allProducts)
-  
+  const products = useSelector(state=>state.product.allProducts);
   useEffect(() => {
-    dispatch(fetchProductData())
-  }, []);
+    dispatch(fetchProductData());
+  }, [])
   
   const filters = useSelector(state=>state.filter.filters);
   const {stock,brands}= filters;
