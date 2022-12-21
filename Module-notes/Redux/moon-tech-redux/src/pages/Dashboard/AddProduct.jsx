@@ -1,11 +1,10 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import addProductData from "../../redux/thunk/products/addProductData";
 const AddProduct = () => {
   const { register, handleSubmit } = useForm();
-  const products = useSelector(state=>state.product.allProducts);
-  console.log(products);
+  const dispatch = useDispatch();
   const submit = (data) => {
     const {model,brand,status,price,keyFeature1,keyFeature2,keyFeature3,keyFeature4} =data
     const product = {
@@ -16,7 +15,7 @@ const AddProduct = () => {
         keyFeature: [keyFeature1,keyFeature2,keyFeature3,keyFeature4,],
         spec: [],
     };
-    addProductData(product)
+    dispatch(addProductData(product))
   };
 
   return (

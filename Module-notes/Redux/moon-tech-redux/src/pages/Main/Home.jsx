@@ -2,16 +2,15 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../../Components/ProductCard";
 import { toogleBrands, toogleStock } from '../../redux/actionCreator/filterAction';
-import { loadProduct } from "../../redux/actionCreator/productAction";
-// import fetchProductData from "../../redux/thunk/products/fetchProducts";
+import fetchProductData from "../../redux/thunk/products/fetchProductData";
 const Home = () => {
   const dispatch = useDispatch()
   const products = useSelector(state=>state.product.allProducts);
   useEffect(() => {
-    fetch('http://localhost:5000/products')
-    .then(res=>res.json())
-    .then(data=>dispatch(loadProduct(data.data)))
-    // dispatch(fetchProductData());
+    // fetch('http://localhost:5000/products')
+    // .then(res=>res.json())
+    // .then(data=>dispatch(loadProduct(data.data)))
+    dispatch(fetchProductData());
   }, [])
   
   const filters = useSelector(state=>state.filter.filters);
