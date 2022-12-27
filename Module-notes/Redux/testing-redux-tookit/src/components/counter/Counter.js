@@ -5,10 +5,11 @@ import styles from './Counter.module.css';
 
 export function Counter() {
   const [incrementAmount, setIncrementAmount] = useState('2');
+
   const dispatch = useDispatch();
   const count = useSelector(state=>state.counter.count)
+
   const incrementValue = Number(incrementAmount) || 0;
-  console.log(incrementValue);
 
   return (
     <div>

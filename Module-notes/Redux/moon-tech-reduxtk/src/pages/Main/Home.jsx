@@ -1,29 +1,27 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../../Components/ProductCard";
-import { toogleBrands, toogleStock } from '../../redux/actionCreator/filterAction';
-import fetchProductData from "../../redux/thunk/products/fetchProductData";
+import { toogleBrands, toogleStock } from '../../features/filters/filtersSlice';
+// import { loadProduct } from "../../features/products/productSlice";
 const Home = () => {
   const dispatch = useDispatch()
-  const products = useSelector(state=>state.product.allProducts);
+  const [products, setProducts] = useState();
+  // const products = useSelector(state=>state.product.allProducts);
   useEffect(() => {
-    // fetch('http://localhost:5000/products')
-    // .then(res=>res.json())
-    // .then(data=>dispatch(loadProduct(data.data)))
-    dispatch(fetchProductData())
+    fetch('http://localhost:5000/products')
+    .then(res=>res.json())
+    .then(data=>dispatch(setProducts(data.data)))
+    // dispatch(fetchProductData())
   }, [dispatch])
   
-  const filters = useSelector(state=>state.filter.filters);
+  const filters = useSelector(state=>state.filter);
   const {stock,brands}= filters;
-
   const activeClass = "text-white  bg-indigo-500 border-transparent";
-
   let content;
-
-  if(products.length >= 1){
+  if(products?.length >= 1){
     content = products.map(product=><ProductCard key={product._id} product={product}/>)
   }
-  if(products.length >=1 && (stock || brands)){
+  if(products?.length >=1 && (stock || brands)){
     content = products
         .filter(product=>{
           if(stock){
@@ -37,7 +35,7 @@ const Home = () => {
             return product
         })
         .map(product=><ProductCard key={product._id} product={product}/>)
-  }
+  }   
   return (
     <div className='max-w-7xl gap-14 mx-auto my-10'>
       <div className='mb-10 flex justify-end gap-5'>
