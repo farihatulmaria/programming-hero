@@ -1,10 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
+import toast from "react-hot-toast";
 import { MdDeleteForever, MdOutlineSystemUpdateAlt } from 'react-icons/md';
-import { useDispatch, useSelector } from "react-redux";
-import { deleteProduct } from "../../features/products/productSlice";
+import { useDispatch } from "react-redux";
+import { useGetProductsQuery, useRemoveProductMutation } from "../../features/api/apiSlice";
+import { getProducts } from "../../features/products/productSlice";
 const ProductList = () => {
-  const products = useSelector(state=>state.product.allProducts);
-  const dispatch = useDispatch()
+  const { data} = useGetProductsQuery();
+  const [ deleteProduct , {isLoading,isError,isSuccess} ] = useRemoveProductMutation()
+  const products = data?.data
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(getProducts())
+  }, [dispatch])
+  useEffect(() => {
+    if(isLoading){
+      toast.loading("Removing ... ",{id:"removeProduct"})
+    }
+    if(isError){
+      toast.error("Something went wrong while removing product",{id:"removeProduct"})
+    }
+    if(isSuccess){
+      toast.success("Removed product",{id:"removeProduct"})
+    }
+  }, [isLoading,isError,isSuccess])
   return (
     <div className='flex flex-col justify-center items-center h-full w-full '>
       <div className='w-full max-w-7xl mx-auto rounded-lg  bg-white shadow-lg border border-gray-200'>
@@ -72,12 +90,9 @@ const ProductList = () => {
                   </td>
                   <td className='p-2'>
                     <div className='flex justify-center'>
-                      <button onClick={()=>dispatch(deleteProduct(_id))} className='text-red-700'>
+                      <button onClick={()=>deleteProduct(_id)} className='text-red-700'>
                         <MdDeleteForever size={30}/>
                       </button>
-                      {/* <button onClick={()=>dispatch(deleteProductData(_id))} className='text-red-700'>
-                        <MdDeleteForever size={30}/>
-                      </button> */}
                     </div>
                   </td>
                 </tr>

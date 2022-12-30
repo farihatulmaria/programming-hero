@@ -1,23 +1,27 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProductCard from "../../Components/ProductCard";
+import { useGetProductsQuery } from "../../features/api/apiSlice";
 import { toogleBrands, toogleStock } from '../../features/filters/filtersSlice';
-// import { loadProduct } from "../../features/products/productSlice";
 const Home = () => {
   const dispatch = useDispatch()
-  const [products, setProducts] = useState();
-  // const products = useSelector(state=>state.product.allProducts);
-  useEffect(() => {
-    fetch('http://localhost:5000/products')
-    .then(res=>res.json())
-    .then(data=>dispatch(setProducts(data.data)))
-    // dispatch(fetchProductData())
-  }, [dispatch])
   
+  const {data,isLoading,isError,error} = useGetProductsQuery(null,{refetchOnMountOrArgChange:true});
+  const products = data?.data;
+
   const filters = useSelector(state=>state.filter);
   const {stock,brands}= filters;
-  const activeClass = "text-white  bg-indigo-500 border-transparent";
+
   let content;
+
+  const activeClass = "text-white  bg-indigo-500 border-transparent";
+  if(isLoading){
+    content = <h1 className="text-white">LOADING......</h1> ;
+  }
+  if(isError){
+    content = <h1 className="text-white">Something went wrong</h1> 
+    console.log(error);
+  }
   if(products?.length >= 1){
     content = products.map(product=><ProductCard key={product._id} product={product}/>)
   }

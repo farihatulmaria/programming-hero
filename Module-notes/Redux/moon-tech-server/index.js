@@ -27,7 +27,11 @@ const run = async () => {
 
       res.send({ status: true, data: product });
     });
-
+    app.get("/product/:id", async (req, res) => {
+      const id = Number(req.params.id);
+      const product = await productCollection.findOne({_id:ObjectId(id)});
+      res.send(product)
+    });
     app.post("/product", async (req, res) => {
       const product = req.body;
 
@@ -37,7 +41,6 @@ const run = async () => {
     });
     app.delete("/product/:id", async (req, res) => {
       const id = req.params.id;
-
       const result = await productCollection.deleteOne({ _id: ObjectId(id) });
       res.send(result);
     });

@@ -1,10 +1,26 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
-import { useDispatch } from 'react-redux';
-import { addProduct } from "../../features/products/productSlice";
+import toast from "react-hot-toast";
+import { useAddProductMutation } from "../../features/api/apiSlice";
 const AddProduct = () => {
-  const { register, handleSubmit } = useForm();
-  const dispatch = useDispatch();
+  const { register, handleSubmit,reset } = useForm();
+ 
+  const [postProduct,{isError,isLoading,isSuccess}] = useAddProductMutation();
+
+  useEffect(() => {
+    if(isLoading){
+      toast.loading("Posting ... ", {id:"addProduct"})
+    }
+    if(isError){
+      toast.error("Something went wrong while posting", {id:"addProduct"})
+    }
+    if(isSuccess){
+      toast.success("Added the product", {id:"addProduct"})
+      reset()
+    }
+  }, [isLoading,isError,isSuccess,reset])
+  
+
   const submit = (data) => {
     const {model,brand,status,price,keyFeature1,keyFeature2,keyFeature3,keyFeature4} =data
     const product = {
@@ -15,8 +31,7 @@ const AddProduct = () => {
         keyFeature: [keyFeature1,keyFeature2,keyFeature3,keyFeature4,],
         spec: [],
     };
-    dispatch(addProduct(product))
-    // dispatch(addProductData(product))
+    postProduct(product)
   };
 
   return (
