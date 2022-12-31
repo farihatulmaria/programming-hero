@@ -1,7 +1,6 @@
 import { gsap } from "gsap";
 import React, { useLayoutEffect, useRef } from "react";
 import { BiSearchAlt } from "react-icons/bi";
-import { useSelector } from "react-redux";
 import hero1 from "../../assets/hero-01.jpg";
 import hero2 from "../../assets/hero-02.jpg";
 import hero3 from "../../assets/hero-03.jpg";
@@ -19,8 +18,6 @@ const Landing = () => {
     "SQA",
     "Tester",
   ];
-  const state = useSelector(state=>state);
-  console.log(state);
   const el = useRef();
   const tl = useRef();
   const tl2 = useRef();
